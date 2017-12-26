@@ -13,4 +13,4 @@ Django
 
 Database:
 
-MySQL
+SQLite
