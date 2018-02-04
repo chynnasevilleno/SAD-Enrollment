@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Promissory Note Request List</title>
+
+      <!-- globals -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- css files -->
+      <link href="01-css/bootstrap.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/normalize.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/styles.css" rel="stylesheet" type="text/css" />
+
+      <!-- icons -->
+      <link rel="stylesheet" href="04-fonts/simple-line-icons-master/css/simple-line-icons.css">
+      <link rel="stylesheet" href="04-fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-faded bg-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#"></a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="cashier-dashboard.html">Home </a>
+            </li>
+            <li class="nav-item active-menu">
+              <a class="nav-link" href="cashier-settings.html" style="color: #4688F1;">Settings<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Reports</a>
+            </li>
+          </ul>
+        </div>
+        <span class="navbar-text">Steve Harrington <i class="icon-arrow-down"></i> </span> <!-- User's fullname -->
+        <a href="index.html">
+          <button class="btn-logout"><span>Logout</span></button>
+        </a>
+      </nav>
+    </div>
+    <!-- NAVBAR -->
+    <!-- CONTENT -->
+    <div class="container-fluid bg-content">
+      <div class="content">
+        <h2> Promissory Note Request List </h2>
+        <div class="row search-bar">
+          <div class="col-lg-6">
+            <div class="input-group">
+              <div class="input-group-btn">
+                <button id="selected" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Category
+                </button>
+                <!-- Supply dropdown menu categories, refer to database -->
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">All categories</a>
+                  <a class="dropdown-item" href="#">Particular Name</a>
+                  <a class="dropdown-item" href="#">Year Level</a>
+                </div>
+              </div> 
+              <input type="text" class="changeIfStatus form-control" placeholder="Search records..." aria-label="Search records...">
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-primary">Search</button>
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <button type="button" class="add-button btn btn-primary float-right" data-toggle="modal" data-target="#createScholarship">Create a Request</button>
+              <div class="modal fade" id="createScholarship" tabindex="-1" role="dialog" aria-labelledby="#createScholarship" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h3 class="modal-title" id="labelModal">Create a Promissory Note Request</h3>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <label>Student Name:</label>
+                                <input type="text" class="form-control" id="studentName"placeholder="Enter Student Name"> </input>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label>Student ID:</label>
+                                <p class="form-control-static">  xxxxx </p>
+                              </div>
+                              <div class="col-md-4">
+                                <label>Grade Level:</label> 
+                                 <p class="form-control-static"> Grade xx </p>
+                              </div>
+                              <div class="col-md-4">
+                                <label>School Year:</label>
+                                <p class="form-control-static">2017-2018</p><!--incremental-->
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label> Title: </label>
+                                <input type="text" class="form-control" id="titleRequest" placeholder="Enter Title of Request"> </input> 
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-8">
+                                <label> Reason: </label>
+                                <textarea class="form-control" name="reason" rows="5"  placeholder="Enter your reason of request here." style="margin-top:5px"> </textarea>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label> Amount: </label>
+                                <input type="number" class="form-control" id="amountRequest" placeholder="0.00"> </input> 
+                              </div>
+                              <div class="col-md-4">
+                                <label> Due of Payment: </label>
+                                <input type="date" class="form-control" id="paymentDue" placeholder="mm-dd-yyyy"></input>
+                              </div>
+                            </div>
+                          </form>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+                          <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#confirmModal">Create Request</button>
+                          <div class="modal" id="confirmModal" tabindex="-1" role="dialog">
+                              <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title">Save changes</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p>Are you sure you want to save this record?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" id="saveChanges" class="btn btn-primary" data-dismiss="alert">Save changes</button>
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+            <a href="#" class="card-link margin float-right print"><i class="fa fa-print" aria-hidden="true"></i> Print Records</a>
+          </div>
+        </form>
+      </div>
+        <div class="row table-records table-responsive">
+          <table class="table table-bordered bg-nav table-hover">
+            <thead class="thead-light">
+              <tr>
+                <!-- Refer to database for headings -->
+                <th scope="col">School Year</th>
+                <th scope="col">Student ID</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">Grade Level</th>
+                <th scope="col">Date Requested</th>
+                <th scope="col">Date of Due Payment</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td> 2017-2018 </td>
+                <td> 0001 </td>
+                <td> Brown, Millie-Bobbie </td>
+                <td> Grade 10 </td>
+                <td> October 18, 2017 </td>
+                <td> November 18, 2017 </td>
+                <td> Approved </td>
+                <td class="text-center"><a href="#" class="btn btn-secondary btn-sm view-button">Edit</a></td>
+              </tr>
+              <tr>
+                <td> 2017-2018 </td>
+                <td> 0001 </td>
+                <td> Brown, Millie-Bobbie </td>
+                <td> Grade 10 </td>
+                <td> November 24, 2017 </td>
+                <td> December 14, 2017 </td>
+                <td> Approved </td>
+                <td class="text-center"><a href="#" class="btn btn-secondary btn-sm view-button">Edit</a></td>
+              </tr>
+              <tr>
+                <td> 2017-2018 </td>
+                <td> 0004 </td>
+                <td> Heaton, Charlie </td>
+                <td> Grade 1 </td>
+                <td> January 5, 2017 </td>
+                <td> February 5, 2017 </td>
+                <td> Pending </td>
+                <td class="text-center"><a href="#" class="btn btn-secondary btn-sm view-button">Edit</a></td>
+              </tr>
+              <tr>
+                <td> 2017-2018 </td>
+                <td> 0002 </td>
+                <td> Dyer, Natalia </td>
+                <td> Grade 6 </td>
+                <td> January 10, 2017 </td>
+                <td> February 8, 2017 </td>
+                <td> Pending </td>
+                <td class="text-center"><a href="#" class="btn btn-secondary btn-sm view-button">Edit</a></td>
+              </tr>
+              <tr>
+                <td> 2017-2018 </td>
+                <td> 0007 </td>
+                <td> MclAughlin, Caleb </td>
+                <td> Grade 3 </td>
+                <td> January 23, 2017 </td>
+                <td> February 20, 2017 </td>
+                <td> Pending </td>
+                <td class="text-center"><a href="#" class="btn btn-secondary btn-sm view-button">Edit</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <nav aria-label="Page navigation">
+          <ul class="pagination pagination-md justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- CONTENT -->
+
+    <!-- JQUERY -->
+    <script src="02-javascript/jquery-3.2.1.min.js"></script>
+
+    <!-- Allows dropdown menu to select child -->
+    <script>
+    $(function(){
+
+      $(".dropdown-menu a").click(function(){
+
+            $("#selected:first-child").text($(this).text());
+            $("#selected:first-child").val($(this).text());
+            if($("#selected:first-child").val() == "Status"){
+                $(".changeIfStatus").replaceWith("<h1> test </h1>"); // must change into dropdown
+            }
+            else{
+
+            }
+
+         });
+
+      });
+    </script>
+
+    <!-- Bootstrap CDN in case something glitches -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+    <script src="02-javascript/bootstrap.bundle.js"></script>
+    <script src="02-javascript/bootstrap.js"></script>
+    <script src="02-javascript/bootstrap.min.js"></script>
+
+  </body>
+</html>
