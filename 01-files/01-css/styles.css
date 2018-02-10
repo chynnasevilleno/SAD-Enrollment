@@ -51,8 +51,8 @@ nav .active-menu{
 	font-weight: bold;
 }
 .form-input{
-	background: #F4F4F4;
-	box-shadow: 0 2px 25px 0 #C2E1EE;
+	background: #f3f3f3;
+	/*box-shadow: 0 2px 25px 0 #C2E1EE;*/
 	border-radius: 26px;
 	width: 413px;
 	height: 375px;
@@ -69,6 +69,7 @@ nav .active-menu{
 	text-align: center;
 	-webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
+    text-decoration: none !important;
 }
 .btn-login:hover{
 	box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
@@ -84,7 +85,7 @@ nav .active-menu{
 	padding:28px;
 }
 .input-login{
-	background: #F7F8F9;
+	background: #ffffff;
 	border: 1px solid rgba(122,134,154,0.39);
 	border-radius: 8px;
 	width: 359px;
@@ -94,7 +95,7 @@ nav .active-menu{
 	margin-bottom: 30px;
 }
 .placeholder{
-	color: #A4A4A4;
+	color: #121774;
 	letter-spacing: 0;
 	margin-top: 10px;
 }

@@ -57,60 +57,8 @@
                 <h2>Curriculum Details</h2>
               </div>
               <div class="col-md-4">
-                <div class="float-right">
-                  <button type="button" class="add-button btn btn-primary float-right" data-toggle="modal" data-target="#createSubjectOfferingModal"><i class="fa fa-plus" aria-hidden="true"></i> Add Subject to Curriculum</button>
-              <div class="modal fade" id="createSubjectOfferingModal" tabindex="-1" role="dialog" aria-labelledby="#createStudentOfferingModal" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h3 class="modal-title" id="labelModal">Add Subject to Curriculum</h3>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <form>
-                            <div class="row" id="addSubjects">
-                              <div class="col-md-4">
-                                <label>Subject ID:</label>
-                                <p class="form-control-static">0001</p>
-                              </div>
-                              <div class="col-md-6">
-                                <label>Subject Name:</label>
-                                  <input type="text" class="form-control" required>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <button type="button" onclick="add()" class="btn btn-link"><i class="fa fa-plus" aria-hidden="true"></i> Add additional subject</button>
-                            </div>
-                          </form>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
-                          <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#confirmModal">Save Subjects</button>
-                          <div class="modal" id="confirmModal" tabindex="-1" role="dialog">
-                              <div class="modal-dialog" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title">Save changes</h5>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
-                                    </div>
-                                    <div class="modal-body">
-                                      <p>Are you sure you want to save this record?</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" id="saveChanges" class="btn btn-primary" data-dismiss="alert">Save changes</button>
-                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                    </div>
-                  </div>
+                <div class="btn-group float-right">
+                  <a href="curriculum-subjects-list-add.html" class="add-button btn btn-primary "><i class="fa fa-plus" aria-hidden="true"></i> Add New Subjects</a>
                 </div>
               </div>
             </div>
@@ -120,19 +68,25 @@
                   <tr>
                     <!-- Refer to database for headings -->
                     <th scope="col">Subject ID</th>
+                    <th scope="col">Grade Level</th>
                     <th scope="col">Subject Name</th>
-                    <th scope="col">Subject Status</th>
+                    <th scope="col">Credit Units</th>
+                    <th scope="col">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>0001</td>
-                    <td>Mathematics IV</td>
+                    <td>Grade 6</td>
+                    <td>Mathematics VI</td>
+                    <td>3/3</td>
                     <td class="text-center"><a href="#" class="btn btn-secondary btn-sm view-button">Edit</a></td>
                   </tr>
                   <tr>
                     <td>0002</td>
-                    <td>Computer</td>
+                    <td>Grade 6</td>
+                    <td>Computer VI</td>
+                    <td>3/5</td>
                     <td class="text-center"><a href="#" class="btn btn-secondary btn-sm view-button">Edit</a></td>
                   </tr>
                 </tbody>
