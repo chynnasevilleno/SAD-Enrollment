@@ -262,57 +262,6 @@ nav .active-menu{
 .date-padding-reset{
 	padding-left: 0 !important;
 }
-
-/* promissory form template*/
-.container .form-padding {
-	padding-bottom: 50px;
-}
-.form-margin {
-	margin-bottom: 10px;
-}
-.form-heading{
-	color: #A4A4A4;
-	letter-spacing: 0;
-}
-.form-heading h1{
-	margin-bottom: 0;
-}
-.form-heading h4{
-	padding-top: 0;
-	padding-bottom: 5px;
-}
-.btn:hover {
-	color: #FFFFFF;
-	background-color: #4285F4;
-	transition: 0.5s;
-	opacity: 1;
-}
-
-/* cashier transaction */
-.float-right{
-	float: right;
-}
-
-.input-padding {
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-
-.amount-emphasis {
-	color: red;
-}
-
-.btn-type {
-	padding-right: 50px;
-	padding-left: 50px;
-	margin-right: 50px;
-}
-
-.padding-btn {
-	padding-left: 50px;
-	padding-right: 50px;
-}
-
 .pagination{
 	justify-content: center;
 }
