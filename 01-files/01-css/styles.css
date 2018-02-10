@@ -27,9 +27,17 @@ nav .active-menu{
 	padding-bottom: 10px !important;
 }
 /* index.html */
-.container {
+.container{
+	display: flex;
+  	flex-flow: row wrap;
+  	-webkit-justify-content: center;
+          justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 50px;
+}
+.form-container {
   background-color: #FFFFFF;
-  padding-top: 50px;
+  padding-top: 20px !important;
   display: flex;
   flex-flow: row wrap;
   -webkit-justify-content: center;

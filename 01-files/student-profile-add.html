@@ -55,74 +55,74 @@
           <div class="row">
             <div class="col">
               <h3 class="link" style="margin-top: 10px;">Student Registration</h3>
-                </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <label>Student ID:</label>
+              <p class="form-control-static">0001</p><!--incremental-->
             </div>
-            <div class="row">
-              <div class="col-md-4">
-                <label>Student ID:</label>
-                <p class="form-control-static">0001</p><!--incremental-->
-              </div>
-              <div class="col-md-4">
-                <label>Student Name:</label>
-                <p class="form-control-static">Brown, Millie-Bobbie</p><!--incremental-->
-              </div>
+            <div class="col-md-4">
+              <label>Student Name:</label>
+              <p class="form-control-static">Brown, Millie-Bobbie</p><!--incremental-->
             </div>
-            <div class="row">
-              <div class="col-md-4">
-                <label>Enrollment ID:</label>
-                <p class="form-control-static">0003</p><!--incremental-->
-              </div>
-              <div class="col-md-4">
-                <label>Student Type:</label>
-                <p class="form-control-static">Grade School</p>
-              </div>
-              <div class="col-md-4">
-                <label>Date Enrolled:</label>
-                <p class="form-control-static">01/07/18</p><!-- current Date and time?-->
-              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <label>Enrollment ID:</label>
+              <p class="form-control-static">0003</p><!--incremental-->
             </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label>Section:</label>
-                <select class="custom-select btn-block" required>
-                  <option selected>Choose a section...</option>
-                  <option value="1">St. Nicholas</option>
-                  <option value="2">St. O hai Mark</option>
-                  <option value="3">St. Lorenzo Ruiz</option>
-                  <!-- Values should be from the database SectionName -->
-                </select>
-              </div>
+            <div class="col-md-4">
+              <label>Student Type:</label>
+              <p class="form-control-static">Grade School</p>
             </div>
-            <h5 class="sm-headings">Scholarships </h5>
-            <div class="row">
-              <div class="col-md-4">
-                <label>Scholarship Name:</label>
-                <select class="custom-select btn-block" required>
-                  <option selected>Choose a scholarship name..</option>
-                  <option value="1">ESC</option>
-                  <option value="2">Voucher</option>
-                  <option value="3">Others</option>
-                  <!-- Values should be from the database ScholarshipsID(?) -->
-                </select>
-              </div>
-              <div class="col-md-4">
-                <label>School Year:</label>
-                <select class="custom-select btn-block" required>
-                  <option selected>Choose a school year..</option>
-                  <option value="1">2015-2016</option>
-                  <option value="2">2016-2017</option>
-                  <option value="3">2017-2018</option>
-                  <!-- Values should be from the database SchoolYearID -->
-                </select>
-              </div>
+            <div class="col-md-4">
+              <label>Date Enrolled:</label>
+              <p class="form-control-static">01/07/18</p><!-- current Date and time?-->
             </div>
-            <div class="btn-forms" style="display: flex; justify-content: flex-end">
-              <button type="button" class="btn btn-link">Cancel</button><!--Go back to records-->
-              <a href="#" class="btn btn-primary "><i class="fa fa-check-circle" aria-hidden="true"></i> Save Student Profile</a>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Section:</label>
+              <select class="custom-select btn-block" required>
+                <option selected>Choose a section...</option>
+                <option value="1">St. Nicholas</option>
+                <option value="2">St. O hai Mark</option>
+                <option value="3">St. Lorenzo Ruiz</option>
+                <!-- Values should be from the database SectionName -->
+              </select>
             </div>
-          </form>
-        </div>
+          </div>
+          <h5 class="sm-headings">Scholarships </h5>
+          <div class="row">
+            <div class="col-md-4">
+              <label>Scholarship Name:</label>
+              <select class="custom-select btn-block" required>
+                <option selected>Choose a scholarship name..</option>
+                <option value="1">ESC</option>
+                <option value="2">Voucher</option>
+                <option value="3">Others</option>
+                <!-- Values should be from the database ScholarshipsID(?) -->
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label>School Year:</label>
+              <select class="custom-select btn-block" required>
+                <option selected>Choose a school year..</option>
+                <option value="1">2015-2016</option>
+                <option value="2">2016-2017</option>
+                <option value="3">2017-2018</option>
+                <!-- Values should be from the database SchoolYearID -->
+              </select>
+            </div>
+          </div>
+          <div class="btn-forms" style="display: flex; justify-content: flex-end">
+            <a href="student-profile.html" class="btn btn-link">Cancel</a>
+            <a href="#" class="btn btn-primary "><i class="fa fa-check-circle" aria-hidden="true"></i> Save Student Registration</a>
+          </div>
+        </form>
       </div>
+    </div>
 
     <!-- Bootstrap CDN in case something glitches -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
