@@ -13,6 +13,7 @@
       <link href="01-css/normalize.css" rel="stylesheet" type="text/css" />
       <link href="01-css/styles.css" rel="stylesheet" type="text/css" />
       <link href="01-css/gijgo.min.css" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="01-css/print.css" type="text/css" media="print">
 
       <!-- icons -->
       <link rel="stylesheet" href="04-fonts/simple-line-icons-master/css/simple-line-icons.css">
@@ -21,6 +22,7 @@
   </head>
   <body>
   <!-- NAVBAR -->
+  <div class="no-print">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg navbar-light bg-faded bg-nav">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,11 +48,12 @@
         </a>
       </nav>
     </div>
+  </div>
     <!-- NAVBAR -->
     <!-- CONTENT -->
     <div class="container-fluid bg-content">
       <div class="content"> 
-        <a href="section-list.html"><h4><i class="fa fa-angle-left" aria-hidden="true"></i> Back to records list</h4></a>
+        <a href="section-list.html" class="no-print"><h4><i class="fa fa-angle-left" aria-hidden="true"></i> Back to records list</h4></a>
         <div class="card">
           <div class="card-block">
             <div class="row">
@@ -77,8 +80,8 @@
               <div class="col-md-8">
                 <h2>Student List</h2>
               </div>
-              <div class="col-lg-4">
-                <a href="#" class="card-link margin"><i class="fa fa-print" aria-hidden="true"></i> Print Section Details</a>
+              <div class="col-lg-4 no-print">
+                <a href="javascript:window.print()" class="card-link margin"><i class="fa fa-print" aria-hidden="true"></i> Print Section Details</a>
                 <div class="btn-group float-right">
                   <a href="section-details-add.html" class="add-button btn btn-primary "><i class="fa fa-plus" aria-hidden="true"></i> Add Student</a>
                 </div>
@@ -93,7 +96,7 @@
                     <th scope="col">Last Name <i class="fa fa-sort" aria-hidden="true"></th>
                     <th scope="col">First Name</th>
                     <th scope="col">Middle Name</th>
-                    <th scope="col">Actions <i class="fa fa-sort" aria-hidden="true"></th>
+                    <th scope="col" class="no-print">Actions <i class="fa fa-sort" aria-hidden="true"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -102,7 +105,7 @@
                     <td>Da wae</td>
                     <td>Do you</td>
                     <td>know</td>
-                    <td class="text-center"><a href="#" class="btn btn-success btn-sm view-button">View</a><!--Makita student profile nila-->
+                    <td class="text-center no-print"><a href="#" class="btn btn-success btn-sm view-button">View</a><!--Makita student profile nila-->
                     <a href="#" class="btn btn-danger btn-sm view-button">Delete</a></td>
                   </tr>
                 </tbody>

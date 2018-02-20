@@ -119,8 +119,6 @@ nav .active-menu{
 .btn-logout{
 	margin-left: 20px;
 	background: #4285F4;
-	/* Circle */
-	/*border-radius: 60px;*/
 	width: 100px;
 	height: 40px;
 	color: #FFFFFF;
@@ -130,6 +128,7 @@ nav .active-menu{
 	background: #4285F4;
 	border-radius: 10px;
     transition: all 0.3s ease 0s;
+    text-align: center;
 }
 .btn-logout:hover {
   background: #CF4647;
