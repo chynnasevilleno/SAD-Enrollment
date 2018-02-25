@@ -111,7 +111,7 @@
       var count=1;
       var add = function(){
         if(count >= 15) return;
-        $('#addSubjects').append('<div class="row" id="addSubjects"><div class="col-md-2"> <label>Subject ID:</label><p class="form-control-static">0001</p></div><div class="col-md-6"><label>Subject Name:</label><input type="text" class="form-control" required></div><div class="col-md-2"><label>Units:</label><input type="number" class="form-control" required></div><div class="col-md-2 text-center delete-btn"><a href="#" class="delete-row warning" onclick="deleteRow(this)"><i class="fa fa-close"></i></div></div>') // Increment SubjectID
+        $('#addSubjects').append('<div class="row" id="addSubjects"><div class="col-md-2"> <label>Subject ID:</label><p class="form-control-static">0001</p></div><div class="col-md-6"><label>Subject Name:</label><input type="text" class="form-control" required></div><div class="col-md-2"><label>Units:</label><input type="number" class="form-control" required></div><div class="col-md-2 text-center delete-btn"><label>Remove</label><button type="button" class="btn btn-danger" onclick="deleteRow(this)">Remove</button></div></div>') // Increment SubjectID
         count++;
       };
     </script>

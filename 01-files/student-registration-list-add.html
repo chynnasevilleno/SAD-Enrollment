@@ -157,16 +157,26 @@
                 <input type="text" class="form-control" required>
               </div>
             </div>
-            <h5 class="sm-headings">Sisters/Brothers enrolled in Maryknoll (Maximum: 5)</h5>
-            <div class="row" id="addSibs">
-              <div class="col-md-6">
-                <label>Sibling's Name</label>
-                <input type="text" class="form-control" placeholder="Last name, First name">
-                <!-- Dito sana ba kay autocomplete from database records -->
-              </div>
-              <div class="col-md-6">
-                <label>Year Graduated</label>
-                  <input type="text" class="form-control" required>
+            <h5 class="sm-headings">Sisters/Brothers enrolled in Maryknoll</h5>
+            <div id="addSibs">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Sibling's Name</label>
+                  <input list="siblings" type="text" class="form-control" required> <!-- List makes it searchable-->
+                  <!--Display all potential siblings(?)-->
+                  <datalist id="siblings">
+                    <option value="Mosby, Ted"></option>
+                    <option value="Stinson, Barney"></option>
+                    <option value="Sherbatsky, Robin"></option>
+                  </datalist>
+                </div>
+                <div class="col-md-4">
+                  <label>Year Graduated</label>
+                    <input type="text" class="form-control" required>
+                    <!-- Autogenerate year graduated of sibling-->
+                </div>
+                <div class="col-md-2 text-center delete-btn">
+                </div>
               </div>
             </div>
             <div class="row">
@@ -207,14 +217,20 @@
     <script>
       var count=1;
       var add = function(){
-        if(count >= 5) return;
+        if(count >= 100) return;
 
-        $('#addSibs').append('<div class="col-md-6"> <label>Sibling\'s Name</label><input type="text" class="form-control" placeholder="Last name, First name"></div><div class="col-md-6"><label>Year Graduated</label><input type="text" class="form-control" required></div>')
+        $('#addSibs').append('<div class="row"><div class="col-md-6"> <label>Sibling\'s Name</label><input list="siblings" type="text" class="form-control" required> <!-- List makes it searchable--><datalist id="siblings"><option value="Mosby, Ted"></option><option value="Stinson, Barney"></option><option value="Sherbatsky, Robin"></option></datalist></div><div class="col-md-4"><label>Year Graduated</label><input type="text" class="form-control" required></div><div class="col-md-2 text-center delete-btn"><button type="button" class="btn btn-danger" onclick="deleteRow(this)">Remove</button></div></div></div>')
 
         count++;
 
-        if(count >= 5) { $("#sibs").remove(); }
+        if(count >= 100) { $("#sibs").remove(); }
       };
+    </script>
+
+    <script>
+      function deleteRow(obj){
+        $(obj).closest('.row').remove();
+      }
     </script>
 
     <!-- Bootstrap CDN in case something glitches -->

@@ -302,8 +302,8 @@ nav .active-menu{
 
 /* CURRICULUM LIST ADD */
 .delete-btn{
-	font-size:2em; 
-	margin-top: 30px
+	/*font-size:2em; */
+	margin-top: 40px;
 }
 .warning{
 	color:#DE350A;
