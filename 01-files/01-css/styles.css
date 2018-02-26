@@ -308,3 +308,21 @@ nav .active-menu{
 .warning{
 	color:#DE350A;
 }
+
+/* CURRICULUM LIST */
+.flex-container{
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-end;
+}
+.menu-flex{
+	display: flex; 
+	justify-content: space-between !important;
+}
+.flex-item{
+	align-self: flex-end;
+	
+}
+.title{
+	text-align: center;
+}

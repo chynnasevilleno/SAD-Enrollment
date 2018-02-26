@@ -50,34 +50,37 @@
     <div class="container-fluid bg-content">
       <div class="content">
         <h2> System Users </h2>
-        <div class="row search-bar">
-          <div class="col-lg-6">
-            <div class="input-group">
-              <div class="input-group-btn">
-                <button id="selected" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Category
-                </button>
-                <!-- Supply dropdown menu categories, refer to database -->
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">All categories</a>
-                  <a class="dropdown-item" href="#">User ID</a>
-                  <a class="dropdown-item" href="#">Full Name</a>
-                  <a class="dropdown-item" href="#">User Role</a>
-                  <a class="dropdown-item" href="#">Department</a>
-                  <a class="dropdown-item" href="#">Status</a>
+        <div class="menu-flex search-bar">
+          <div class="flex-search">
+            <div class="row">
+              <div class="col">
+                <div class="input-group">
+                  <div class="input-group-btn">
+                    <button id="selected" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Category
+                    </button>
+                    <!-- Supply dropdown menu categories, refer to database -->
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">All categories</a>
+                      <a class="dropdown-item" href="#">User ID</a>
+                      <a class="dropdown-item" href="#">Full Name</a>
+                      <a class="dropdown-item" href="#">User Role</a>
+                      <a class="dropdown-item" href="#">Department</a>
+                      <a class="dropdown-item" href="#">Status</a>
+                    </div>
+                  </div>
+                  <input type="text" class="changeIfStatus form-control" placeholder="Search records..." aria-label="Search records...">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-primary">Search</button>
+                  </span>
                 </div>
               </div>
-              <input type="text" class="changeIfStatus form-control" placeholder="Search records..." aria-label="Search records...">
-              <span class="input-group-btn">
-                <button type="button" class="btn btn-primary">Search</button>
-              </span>
             </div>
           </div>
-          <div class="col-lg-6">
+          <div class="flex-print">
             <div class="btn-group float-right">
               <a href="users-list-add.html" class="add-button btn btn-primary "><i class="fa fa-plus" aria-hidden="true"></i> Create System User</a>
             </div>
-            <a href="#" class="card-link margin float-right print"><i class="fa fa-print" aria-hidden="true"></i> Print Records</a>
           </div>
         </div>
         <div class="row table-records table-responsive">

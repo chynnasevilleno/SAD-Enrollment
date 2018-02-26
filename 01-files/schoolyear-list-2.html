@@ -12,6 +12,7 @@
       <link href="01-css/bootstrap.min.css" rel="stylesheet" type="text/css" />
       <link href="01-css/normalize.css" rel="stylesheet" type="text/css" />
       <link href="01-css/styles.css" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="01-css/print.css" type="text/css" media="print">
 
       <!-- icons -->
       <link rel="stylesheet" href="04-fonts/simple-line-icons-master/css/simple-line-icons.css">
@@ -19,7 +20,8 @@
 
   </head>
   <body>
-    <!-- NAVBAR -->
+  <!-- NAVBAR -->
+  <div class="no-print">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg navbar-light bg-faded bg-nav">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,23 +47,24 @@
         </a>
       </nav>
     </div>
-    <!-- NAVBAR -->
-    <!-- CONTENT -->
+  </div>
+  <!-- NAVBAR -->
+  <!-- CONTENT -->
     <div class="container-fluid bg-content">
       <div class="content">
-        <div class="row margin">
-          <div class="col-md-4">
+        <div class="menu-flex margin ">
+          <div class="flex-item no-print">
             <a href="#"><h4><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous School Year</h4></a>
           </div>
-          <div class="col-md-4">
+          <div class="flex-item title">
             <h2 class="text-center">SY 2017-2018</h2> <!-- Current School Year -->
           </div>
-          <div class="col-md-4">
+          <div class="flex-item no-print">
             <a class="text-right" href="#"><h4>Next School Year <i class="fa fa-chevron-right" aria-hidden="true"></i></h4></a>
           </div>
         </div>
-        <div class="row search-bar">
-          <div class="col-lg-6">
+        <div class="menu-flex search-bar no-print">
+          <div class="flex-search">
             <div class="input-group">
               <div class="input-group-btn">
                 <button id="selected" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -82,11 +85,9 @@
               </span>
             </div>
           </div>
-          <div class="col-lg-6">
-            <div class="btn-group float-right">
-              <a href="subject-offering-add.html" class="add-button btn btn-primary "><i class="fa fa-plus" aria-hidden="true"></i> Create New Subject Offering</a>
-            </div>
-            <a href="#" class="card-link margin float-right print"><i class="fa fa-print" aria-hidden="true"></i> Print Records</a>
+          <div class="flex-print">
+              <a href="javascript:window.print()" class="card-link margin flex-item print"><i class="fa fa-print" aria-hidden="true"></i> Print Offerings</a>
+              <a href="subject-offering-add.html" class="add-button btn btn-primary flex-item"><i class="fa fa-plus" aria-hidden="true"></i> Create New Subject Offering</a>
           </div>
         </div>
         <div class="row table-records table-responsive">
@@ -94,33 +95,33 @@
                 <thead class="thead-light">
                   <tr>
                     <!-- Refer to database for headings -->
-                    <th scope="col">Offering ID </th>
+                    <th scope="col">Offering Code </th>
                     <th scope="col">Subject Name</th>
                     <th scope="col">Schedule</th>
                     <th scope="col">Teacher Assigned</th>
                     <th scope="col">Section Assigned</th>
                     <th scope="col">Capacity</th>
-                    <th scope="col">Actions</th>
+                    <th scope="col" class="no-print">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>0001</td>
+                    <td>10-301</td>
                     <td>Mathematics VI</td>
                     <td>9:30 AM - 10:30 AM</td>
                     <td>Skywalker, Luke</td>
                     <td>St. Oh hai Mark</td>
                     <td><span>42<span><span>/45</span></td><!-- First span is students currently enrolled in that offering, Second span is student capacity-->
-                    <td class="text-center"><a href="#" class="btn btn-success btn-sm view-button">View</a></td>
+                    <td class="text-center no-print"><a href="#" class="btn btn-success btn-sm view-button">View</a></td>
                   </tr>
                   <tr>
-                    <td>0002</td>
+                    <td>10-302</td>
                     <td>Computer VI</td>
                     <td>11:30 AM - 12:30 AM</td>
                     <td>Kenobi, Obi-Wan</td>
                     <td>St. Gabriel</td>
                     <td>40/45</td>
-                    <td class="text-center"><a href="#" class="btn btn-success btn-sm view-button">View</a></td>
+                    <td class="text-center no-print"><a href="#" class="btn btn-success btn-sm view-button">View</a></td>
                   </tr>
                 </tbody>
               </table>
