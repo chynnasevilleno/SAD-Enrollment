@@ -12,7 +12,6 @@
       <link href="01-css/bootstrap.min.css" rel="stylesheet" type="text/css" />
       <link href="01-css/normalize.css" rel="stylesheet" type="text/css" />
       <link href="01-css/styles.css" rel="stylesheet" type="text/css" />
-      <link href="01-css/gijgo.min.css" rel="stylesheet" type="text/css" />
       <link rel="stylesheet" href="01-css/print.css" type="text/css" media="print">
 
       <!-- icons -->
@@ -65,22 +64,22 @@
                   </div>
                   <div class="col-md-4 float-right no-print">
                     <br/><!-- bwahaha tricks-->
-                    <a href="javascript:window.print()" class="card-link margin"><i class="fa fa-print" aria-hidden="true"></i> Print Student Registration</a>
+                    <a href="javascript:window.print()" class="card-link margin btn btn-outline-primary"><i class="fa fa-print" aria-hidden="true"></i> Print Student Profile</a>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-sm-4">
                     <h6 class="card-subtitle mb-2 link">Student ID: <span class="text-muted">0001</span></h6>
                     <h6 class="card-subtitle link mb-2 ">Student Level:<span class="text-muted"> Grade School</span></h6>
-                    <h6 class="card-subtitle mb-2 link no-print">Place of Birth: <span class=" text-muted">Davao City, Philippines</span></h6>
-                    <h6 class="card-subtitle link mb-2 no-print">Date of Birth: <span class="text-muted">February 19, 2002</span></h6>
+                    <h6 class="card-subtitle mb-2 link">Place of Birth: <span class=" text-muted">Davao City, Philippines</span></h6>
+                    <h6 class="card-subtitle link mb-2 ">Date of Birth: <span class="text-muted">February 19, 2002</span></h6>
                   </div>
-                  <div class="col-md-4 no-print">
+                  <div class="col-sm-4">
                     <h6 class="card-subtitle link mb-2 ">Sex: <span class="text-muted"> Female</span></h6>
                     <h6 class="card-subtitle link mb-2 ">Home Address: <span class="text-muted"> 2595 Pearlman Avenue Sudbury, MA</span></h6>
                     <h6 class="card-subtitle link mb-2 ">Postal Address: <span class="text-muted"> 2595 Pearlman Avenue Sudbury, MA</span></h6>
                   </div>
-                  <div class="col-md-4 no-print">
+                  <div class="col-md-4">
                     <h6 class="card-subtitle link mb-2 ">Father's Name: <span class="text-muted"> Han Solo</span></h6>
                     <h6 class="card-subtitle link mb-2 ">Mother's Name: <span class="text-muted"> Leia Organa</span></h6>
                     <h6 class="card-subtitle link mb-2 ">Guardian's Name: <span class="text-muted"> Luke Skywalker</span></h6>
@@ -103,7 +102,6 @@
                 <thead class="thead-light">
                   <tr>
                     <!-- Refer to database for headings -->
-                    <th scope="col">Curriculum Year</th>
                     <th scope="col">School Year</th>
                     <th scope="col">Year Level</th>
                     <th scope="col">Date Enrolled</th>
@@ -114,22 +112,166 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>2015</td>
                     <td>2018-2019</td>
                     <td>Grade 6</td>
                     <td>01-07-18</td>
                     <td>Enrolled</td><!-- If paid, tag as enrolled. Else, pending-->
                     <td class="no-print"><span class="no-print"><i class="fa fa-circle active-status"></i> </span> Active</td>
-                    <td class="no-print text-center"><a href="#" class="btn btn-success btn-sm view-button">View</a><a href="#" class="btn btn-secondary btn-sm view-button">Edit</a></td>
+                    <td class="no-print text-center">
+                      <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
+                      <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModal" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                      <h5 class="modal-title">Student Registration</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                  </div>
+                                <div class="modal-body text-left">
+                                  <h5 class="sm-headings">Student Details</h5>
+                                  <div class="row">
+                                    <div class="col-md-4">
+                                      <label>Student Code:</label>
+                                      <p>123456789</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Student Name:</label>
+                                        <p>Brown, Millie-Bobbie</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Student type:</label>
+                                        <p><b>OLD STUDENT</b></p>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-md-4">
+                                        <label>Year Level:</label>
+                                        <p>Grade 6</p>
+                                      </div>
+                                      <div class="col-md-4">
+                                          <label>Section:</label>
+                                          <p>St. Lorenzo Ruiz</p>
+                                        </div>
+                                    </div>
+                                    <h5 class="sm-headings">Enrollment Details</h5>
+                                    <div class="row text-left">
+                                        <div class="col-md-4">
+                                            <label>School Year:</label>
+                                            <p>2018-2019</p>
+                                        </div>
+                                      <div class="col-md-4">
+                                          <label>Date Enrolled:</label>
+                                          <p>January 07, 2018</p>
+                                      </div>
+                                      <div class="col-md-4">
+                                          <label>Enrollment Status:</label>
+                                          <p>Enrolled</p>
+                                      </div>
+                                    </div>
+                                    <h5 class="sm-headings">Scholarship Details</h5> 
+                                    <!--Not necessarily in the same table. 
+                                      Join mo lang scholarship table and student ID para makita anong scholarship nya that SY year-->
+                                    <div class="row">
+                                      <div class="col-md-4">
+                                          <label>Scholarship:</label>
+                                          <p>ESC Scholarship</p>
+                                      </div>
+                                      <div class="col-md-4">
+                                          <label>Validity:</label>
+                                          <p>1 year</p>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-link text-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-outline-primary"><i class="fa fa-print" aria-hidden="true"></i> Print Registration</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
                   </tr>
                   <tr>
-                    <td>2015</td>
                     <td>2017-2018</td>
                     <td>Grade 5</td>
                     <td>01-07-17</td>
                     <td>Enrolled</td>
                     <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print"><a href="#" class="btn btn-success btn-sm view-button">View</a><a href="#" class="btn btn-secondary btn-sm view-button">Edit</a></td>
+                    <td class="text-center no-print">
+                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
+                        <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModal" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Student Registration</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                  <div class="modal-body text-left">
+                                    <h5 class="sm-headings">Student Details</h5>
+                                    <div class="row">
+                                      <div class="col-md-4">
+                                        <label>Student Code:</label>
+                                        <p>123456789</p>
+                                      </div>
+                                      <div class="col-md-4">
+                                          <label>Student Name:</label>
+                                          <p>Brown, Millie-Bobbie</p>
+                                      </div>
+                                      <div class="col-md-4">
+                                          <label>Student type:</label>
+                                          <p><b>OLD STUDENT</b></p>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                          <label>Year Level:</label>
+                                          <p>Grade 6</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Section:</label>
+                                            <p>St. Lorenzo Ruiz</p>
+                                          </div>
+                                      </div>
+                                      <h5 class="sm-headings">Enrollment Details</h5>
+                                      <div class="row text-left">
+                                          <div class="col-md-4">
+                                              <label>School Year:</label>
+                                              <p>2018-2019</p>
+                                          </div>
+                                        <div class="col-md-4">
+                                            <label>Date Enrolled:</label>
+                                            <p>January 07, 2018</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Enrollment Status:</label>
+                                            <p>Enrolled</p>
+                                        </div>
+                                      </div>
+                                      <h5 class="sm-headings">Scholarship Details</h5> 
+                                      <!--Not necessarily in the same table. 
+                                        Join mo lang scholarship table and student ID para makita anong scholarship nya that SY year-->
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                            <label>Scholarship:</label>
+                                            <p>ESC Scholarship</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Validity:</label>
+                                            <p>1 year</p>
+                                        </div>
+                                      </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                      <button type="button" class="btn btn-link text-secondary" data-dismiss="modal">Close</button>
+                                      <button type="button" class="btn btn-outline-primary"><i class="fa fa-print" aria-hidden="true"></i> Print Registration</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
                   </tr>
                 </tbody>
               </table>
@@ -145,7 +287,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 
     <script src="02-javascript/bootstrap.bundle.js"></script>
-    <script src="02-javascript/gijgo.min.js"></script>
     <script src="02-javascript/bootstrap.js"></script>
     <script src="02-javascript/bootstrap.min.js"></script>
   </body>

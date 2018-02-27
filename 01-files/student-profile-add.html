@@ -83,16 +83,38 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6">
-              <label>Section:</label>
-              <select class="custom-select btn-block" required>
-                <option selected>Choose a section...</option>
-                <option value="1">St. Nicholas</option>
-                <option value="2">St. O hai Mark</option>
-                <option value="3">St. Lorenzo Ruiz</option>
-                <!-- Values should be from the database SectionName -->
-              </select>
-            </div>
+              <div class="col-md-4">
+                  <label>School Year:</label>
+                  <select class="custom-select btn-block" required>
+                    <option selected>Choose a school year..</option>
+                    <option value="1">2015-2016</option>
+                    <option value="2">2016-2017</option>
+                    <option value="3">2017-2018</option>
+                    <!-- Values should be from the database SchoolYearID -->
+                  </select>
+                </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+                <label>Enrollment Status:</label>
+                <select class="custom-select btn-block" required>
+                  <option selected>Choose Enrollment Status...</option>
+                  <option value="1">Enrolled</option>
+                  <option value="2">Pending</option>
+                  <option value="3">Others</option>
+                  <!-- Values should be from the database SectionName -->
+                </select>
+              </div>
+              <div class="col-md-4">
+                  <label>Section: (Optional)</label>
+                  <select class="custom-select btn-block" required>
+                    <option selected>Choose a section...</option>
+                    <option value="1">St. Nicholas</option>
+                    <option value="2">St. O hai Mark</option>
+                    <option value="3">St. Lorenzo Ruiz</option>
+                    <!-- Values should be from the database SectionName -->
+                  </select>
+                </div>
           </div>
           <h5 class="sm-headings">Scholarships </h5>
           <div class="row">
@@ -104,16 +126,6 @@
                 <option value="2">Voucher</option>
                 <option value="3">Others</option>
                 <!-- Values should be from the database ScholarshipsID(?) -->
-              </select>
-            </div>
-            <div class="col-md-4">
-              <label>School Year:</label>
-              <select class="custom-select btn-block" required>
-                <option selected>Choose a school year..</option>
-                <option value="1">2015-2016</option>
-                <option value="2">2016-2017</option>
-                <option value="3">2017-2018</option>
-                <!-- Values should be from the database SchoolYearID -->
               </select>
             </div>
           </div>
