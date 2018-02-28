@@ -75,16 +75,19 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <label>Employee Type:</label>
-                  <select class="custom-select btn-block" required>
+                  <select class="custom-select btn-block" id="selectEmpType" required>
                     <option selected>Choose a type..</option>
-                    <option value="0">Teacher</option>
-                    <option value="1">Academic Head</option>
-                    <option value="2">Registrar Head</option>
-                    <option value="3">Cashier</option>
-                    <option value="4">Admin</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="AcadHead">Academic Head</option>
+                    <option value="Registrar">Registrar Head</option>
+                    <option value="Cashier">Cashier</option>
+                    <option value="Admin">Admin</option>
                   </select>
+                </div>
+                <div class="units">
+                    
                 </div>
               </div>
               <div class="row">
@@ -114,6 +117,24 @@
         </form>
       </div>
     </div>
+
+    
+    <!-- Teacher input  add units-->
+    <script>
+      $("#selectEmpType").change(function(){
+        var count=0;
+        if ($(this).val() == "Teacher"){
+          count++;
+          $('.units').append('<div class="col isTeacher"><label>Units:</label><input type="number" class="form-control"></div>');
+        }
+        else{
+          if(count!=1){
+            $( ".isTeacher" ).remove();
+          }
+        }
+      });
+    </script>
+
 
     <!-- Bootstrap CDN in case something glitches -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
