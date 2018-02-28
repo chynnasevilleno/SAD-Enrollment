@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <title>Employee Profile</title>
+      <title>New School Year</title>
 
       <!-- globals -->
       <meta charset="utf-8">
@@ -55,85 +55,34 @@
         <form class="heading-label">
           <div class="row">
             <div class="col">
-              <h3 class="link" style="margin-top: 10px;">Employee Profile</h3>
+              <h3 class="link" style="margin-top: 10px;">New School Year</h3>
               </div>
           </div>
             <form action="#" method="#">
               <!-- Emp First Name -->
               <div class="row">
                 <div class="col-md-4">
-                  <label>First Name:</label>
+                  <label>School Year:</label>
                   <input type="text" class="form-control" value="">
                 </div>
                 <div class="col-sm-4">
-                  <label>Middle Name:</label>
-                  <input type="text" class="form-control">
-                </div>
-                <div class="col-sm-4">
-                  <label>Last Name:</label>
-                  <input type="text" class="form-control">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4">
-                  <label>Employee Type:</label>
+                  <label>Curriculum Year:</label>
                   <select class="custom-select btn-block" id="selectEmpType" required>
-                    <option selected>Choose a type..</option>
-                    <option value="Teacher">Teacher</option>
-                    <option value="AcadHead">Academic Head</option>
-                    <option value="Registrar">Registrar Head</option>
-                    <option value="Cashier">Cashier</option>
-                    <option value="Admin">Admin</option>
+                        <option selected>Choose curriculum year..</option>
+                        <option value="1">2017</option>
+                        <option value="2">2016</option>
+                        <option value="3">2015</option>
+                        <option value="4">2014</option>
                   </select>
-                </div>
-                <div class="units">
-                    
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <label>Employee Status:</label><br>
-                  <label class="custom-control custom-radio">
-                    <input id="radioFullTimeEmployee" name="radio-stacked" type="radio" class="custom-control-input">
-                    <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">Full Time</span>
-                  </label>
-                  <label class="custom-control custom-radio">
-                    <input id="radioInactiveEmployee" name="radio-stacked" type="radio" class="custom-control-input">
-                    <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">Inactive</span>
-                  </label>
-                  <label class="custom-control custom-radio">
-                    <input id="radioOnLeaveEmployee" name="radio-stacked" type="radio" class="custom-control-input">
-                    <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">On Leave</span>
-                  </label>
                 </div>
               </div>
             <div class="btn-forms" style="display: flex; justify-content: flex-end">
-            <a href="employee-list.html" class="btn btn-link">Cancel</a>
-            <a href="#" class="btn btn-primary "><i class="fa fa-check-circle" aria-hidden="true"></i> Save Employee Profile</a>
+            <a href="schoolyear-list-2.html" class="btn btn-link">Cancel</a>
+            <a href="#" class="btn btn-primary "><i class="fa fa-check-circle" aria-hidden="true"></i> Save School Year Details</a>
           </div>
         </form>
       </div>
     </div>
-
-    
-    <!-- Teacher input  add units-->
-    <script>
-      $("#selectEmpType").change(function(){
-        var count=0;
-        if ($(this).val() == "Teacher"){
-          count++;
-          $('.units').append('<div class="col isTeacher"><label>Units:</label><input type="number" class="form-control"></div>');
-        }
-        else{
-          if(count!=1){
-            $( ".isTeacher" ).remove();
-          }
-        }
-      });
-    </script>
 
 
     <!-- Bootstrap CDN in case something glitches -->
