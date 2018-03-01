@@ -1,10 +1,7 @@
-<!-- 2. Admin Dashboard
-Landing page for admins. Quick links and graphs can be found here. 
--->
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <title>Admin Dashboard</title>
+      <title>Subject Details</title>
 
       <!-- globals -->
       <meta charset="utf-8">
@@ -20,25 +17,22 @@ Landing page for admins. Quick links and graphs can be found here.
       <link rel="stylesheet" href="04-fonts/simple-line-icons-master/css/simple-line-icons.css">
       <link rel="stylesheet" href="04-fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 
-
-      <!-- jquery file-->
-      <script src="02-javascript/jquery-3.2.1.min.js"></script>
   </head>
   <body>
-  <!--NAVBAR-->
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-light bg-faded bg-nav">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <!-- NAVBAR -->
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-faded bg-nav">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="#"></a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item active-menu">
-              <a class="nav-link" href="#" style="color: #4688F1;"><span class="sr-only">(current)</span>Home </a>
-            </li>
             <li class="nav-item">
-              <a class="nav-link" href="admin-settings.html">Settings</a>
+              <a class="nav-link" href="admin-dashboard.html">Home </a>
+            </li>
+            <li class="nav-item active-menu">
+              <a class="nav-link" href="admin-settings.html" style="color: #4688F1;">Settings<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Reports</a>
@@ -51,34 +45,33 @@ Landing page for admins. Quick links and graphs can be found here.
         </a>
       </nav>
     </div>
-  <!--NAVBAR-->
-  <!--CONTENT-->
-  <div class="container-fluid bg-content">
-    <div class="content">
-        <div class="content-heading margin">
-          <h1> Welcome, Steve Harrington</h1> <!--Name of user-->
-          <h4> What do you want to do today? </h4>
-        </div>
-        <h3 class="link"> User Actions </h3>
-        <div class="quick-links">
+    <!-- NAVBAR -->
+    <!-- FORM CONTENT -->
+    <div class="container-fluid bg-content">
+      <div class="content">
+        <form class="heading-label">
           <div class="row">
-            <div class="col-md-8">
-              <div class="row">
-                <div class="col quick-links-item">
-                  <button class="btn-links" onclick="location.href='cashier-promissory-list.html'"> <i class="icon-note quick-links-icons"></i> <h4> View Promissory Note Requests </h4>
-                  </button>
+            <div class="col">
+              <h3 class="link" style="margin-top: 10px;">Section Details</h3>
                 </div>
-                <div class="col quick-links-item">
-                  <button class="btn-links" onclick="location.href='employee-list.html'"> <i class="icon-user-follow quick-links-icons"></i> <h4> Create Employee Profiles </h4>
-                  </button>
-                </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Offering Code:</label>
+                <input type="text" class="form-control">
+              </div><!-- add <p> to dynamically display info about offering-->
+              <div class="col-md-6">
+                <label>Teacher Assigned:</label>
+                <input type="text" class="form-control">
               </div>
             </div>
-          </div>
-        </div>
+            <div class="btn-forms" style="display: flex; justify-content: flex-end">
+              <a href="section-list.html" class="btn btn-link">Cancel</a>
+              <a href="#" class="btn btn-primary "><i class="fa fa-check-circle" aria-hidden="true"></i> Save Subject Details</a>
+            </div>
+        </form>
       </div>
     </div>
-    <!--CONTENT-->
     
     <!-- Bootstrap CDN in case something glitches -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
