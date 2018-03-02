@@ -20,39 +20,44 @@
 
   </head>
   <body>
-  <!-- NAVBAR -->
-  <div class="no-print">
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-light bg-faded bg-nav">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#"></a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="admin-dashboard.html">Home </a>
-            </li>
-            <li class="nav-item active-menu">
-              <a class="nav-link" href="admin-settings.html" style="color: #4688F1;">Settings<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Reports</a>
-            </li>
-          </ul>
+    <!--NAVBAR-->
+    <div class="no-print">
+      <nav class="navbar navbar-light bg-faded navbar-expand-lg">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="admin-dashboard.html">Home
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="admin-settings.html">Settings</a>
+                <span class="sr-only">(current)</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Reports</a>
+              </li>
+            </ul>
+          </div>
+          <a class="user black-text" href="#">Steve Harrington
+            <i class="icon-user"></i>
+          </a>
+          <a href="index.html" class="btn btn-logout">Logout</a>
         </div>
-        <span class="navbar-text">Steve Harrington <i class="icon-arrow-down"></i> </span> <!-- User's fullname -->
-        <a href="index.html">
-          <button class="btn-logout"><span>Logout</span></button>
-        </a>
       </nav>
     </div>
-  </div>
-  <!-- NAVBAR -->
-  <!-- CONTENT -->
+    <!--NAVBAR-->
+    <!-- CONTENT -->
     <div class="container-fluid bg-content">
-      <div class="content"> 
-        <a href="curriculum-list.html" ><h4 class="no-print"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to records list</h4></a>
+      <div class="content container">
+        <a href="curriculum-list.html">
+          <h4 class="no-print">
+            <i class="fa fa-angle-left" aria-hidden="true"></i> Back to records list</h4>
+        </a>
         <div class="card">
           <div class="card-block">
             <div class="seal"></div>
@@ -63,8 +68,10 @@
               <div class="col-md-6">
                 <div class="flex-container no-print">
                   <div class="align-right-item">
-                    <a href="javascript:window.print()" class="card-link  print flex-item btn btn-outline-primary"><i class="fa fa-print" aria-hidden="true"></i> Print Records</a>
-                    <a href="curriculum-subjects-list-add.html" class="add-button btn btn-primary "><i class="fa fa-plus" aria-hidden="true"></i> Add New Subjects</a>
+                    <a href="javascript:window.print()" class="card-link  print flex-item btn btn-outline-primary">
+                      <i class="fa fa-print" aria-hidden="true"></i> Print Records</a>
+                    <a href="curriculum-subjects-list-add.html" class="add-button btn btn-primary ">
+                      <i class="fa fa-plus" aria-hidden="true"></i> Add New Subjects</a>
                   </div>
                 </div>
               </div>
@@ -85,14 +92,18 @@
                     <td>Grade 6</td>
                     <td>Mathematics VI</td>
                     <td>3/3</td>
-                    <td class="text-center"><a href="curriculum-subjects-list-add.html" class="btn btn-secondary btn-sm view-button no-print">Edit</a></td>
+                    <td class="text-center">
+                      <a href="curriculum-subjects-list-add.html" class="btn btn-secondary btn-sm view-button no-print">Edit</a>
+                    </td>
                     <!-- For its edit function,redirect pa rin sa add page nya but remove the "add additional subjects below it"-->
                   </tr>
                   <tr>
                     <td>Grade 6</td>
                     <td>Computer VI</td>
                     <td>3/5</td>
-                    <td class="text-center"><a href="#" class="btn btn-secondary btn-sm view-button no-print">Edit</a></td>
+                    <td class="text-center">
+                      <a href="#" class="btn btn-secondary btn-sm view-button no-print">Edit</a>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -100,7 +111,6 @@
           </div>
         </div>
       </div>
-      
     </div>
     <!-- CONTENT -->
 

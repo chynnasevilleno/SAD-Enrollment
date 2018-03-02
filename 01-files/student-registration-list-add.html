@@ -19,36 +19,38 @@
 
   </head>
   <body>
-    <!-- NAVBAR -->
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-light bg-faded bg-nav">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <!--NAVBAR-->
+    <nav class="navbar navbar-light bg-faded navbar-expand-lg">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#"></a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="admin-dashboard.html">Home </a>
+              <a class="nav-link" href="admin-dashboard.html">Home
+              </a>
             </li>
-            <li class="nav-item active-menu">
-              <a class="nav-link" href="admin-settings.html" style="color: #4688F1;">Settings<span class="sr-only">(current)</span></a>
+            <li class="nav-item active">
+              <a class="nav-link" href="admin-settings.html">Settings</a>
+              <span class="sr-only">(current)</span>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Reports</a>
             </li>
           </ul>
         </div>
-        <span class="navbar-text">Steve Harrington <i class="icon-arrow-down"></i> </span> <!-- User's fullname -->
-        <a href="index.html">
-          <button class="btn-logout"><span>Logout</span></button>
+        <a class="user black-text" href="#">Steve Harrington
+          <i class="icon-user"></i>
         </a>
-      </nav>
-    </div>
-    <!-- NAVBAR -->
+        <a href="index.html" class="btn btn-logout">Logout</a>
+      </div>
+    </nav>
+    <!--NAVBAR-->
     <!-- FORM CONTENT -->
     <div class="container-fluid bg-content">
-      <div class="content">
+      <div class="content container">
         <form class="heading-label">
           <div class="row">
             <div class="col">
@@ -57,7 +59,7 @@
             </div>
             <div class="row">
               <div class="col-md-4">
-              <label>Student ID:</label>
+                <label>Student ID:</label>
                 <p class="form-control-static">0009</p><!--incremental-->
               </div>
               <div class="col-md-4">
@@ -199,8 +201,117 @@
               </div>
             </div>
             <div class="btn-forms" style="display: flex; justify-content: flex-end">
+              <!-- new changes 03/02 -->
               <button type="button" class="btn btn-link">Cancel</button><!--Go back to records-->
-              <a href="#" class="btn btn-primary "><i class="fa fa-check-circle" aria-hidden="true"></i> Save Student Profile</a>
+              <button type="button" id="confirmModal" class="btn btn-primary" data-toggle="modal" data-target=".confirmModal"><i class="fa fa-check-circle" aria-hidden="true"></i> Save Student Profile</button>
+              <div class="modal fade confirmModal" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal-dialog role="document"">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Confirm Submission</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-4">
+                              <label>First Name:</label>
+                              <p class="form-control-static" id="firstName">Karl</p>
+                            </div>
+                            <div class="col-sm-4">
+                              <label>Middle Name:</label>
+                              <p class="form-control-static" id="middleName">Heinrich</p>
+                            </div>
+                            <div class="col-sm-4">
+                              <label>Last Name:</label>
+                              <p class="form-control-static" id="lastName">Marx</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8">
+                              <label>Place of Birth:</label>
+                              <p class="form-control-static" id="pob">Tier, Germany Tier, Germany Tier, Germany Tier, Germany Tier, Germany</p>
+                            </div>
+                            <div class="col-sm-4">
+                              <label>Date of Birth:</label>
+                              <p class="form-control-static" id="dob">May 5, 1818</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                              <label>Home Address:</label>
+                              <p class="form-control-static" id="homeAdd">Tier, Germany Tier, Germany Tier, Germany Tier, Germany Tier, Germany</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>Postal Address:</label>
+                                <p class="form-control-static" id="homeAdd">Tier, Germany Tier, Germany Tier, Germany Tier, Germany Tier, Germany</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                              <label>Father's First Name:</label>
+                              <p class="form-control-static" id="fFirstName">Iosif</p>
+                            </div>
+                            <div class="col-sm-4">
+                              <label>Father's Middle Name:</label>
+                              <p class="form-control-static" id="fMidName">Vissarionovich </p>
+                            </div>
+                            <div class="col-sm-4">
+                              <label>Father's Last Name:</label>
+                              <p class="form-control-static" id="fLastName">Dzhugashvili</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                              <label>Mother's First Name:</label>
+                              <p class="form-control-static" id="mFirstName">Hillary</p>
+                            </div>
+                            <div class="col-sm-4">
+                              <label>Mother's Middle Name:</label>
+                              <p class="form-control-static" id="mMidName">Diane</p>
+                            </div>
+                            <div class="col-sm-4">
+                              <label>Mother's Last Name:</label>
+                              <p class="form-control-static" id="mLastName">Clinton</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                              <label>Sibling Full Name:</label>
+                              <p class="form-control-static" id="sFullName">Putin, Vladimir</p>
+                            </div>
+                            <div class="col-sm-4">
+                              <label>Year Graduated:</label>
+                              <p class="form-control-static" id="yrGrad">2018</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                              <label>Guardian's Full Name:</label>
+                              <p class="form-control-static" id="gFullName">Trump, Donald John</p>
+                            </div>
+                            <div class="col-sm-6">
+                              <label>Guardian's Address:</label>
+                              <p class="form-control-static" id="mMidName">Pyongyang, North Korea</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                              <label>School Last Attended:</label>
+                              <p class="form-control-static" id="mFirstName">Florida High School</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary"> Submit Student Profile</button>
+                      </div>
+                  </div>
+                </div>
+              </div>
             </div>
         </form>
       </div>
@@ -213,6 +324,15 @@
     <script src="02-javascript/bootstrap.bundle.js"></script>
     <script src="02-javascript/bootstrap.js"></script>
     <script src="02-javascript/bootstrap.min.js"></script>
+
+    <!--display modal data from input-->
+    <script>
+      $(function(){
+          $('#confirmModal').on('click', function(){
+            
+          });
+      });
+    </script>
 
     <script>
       var count=1;

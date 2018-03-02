@@ -19,45 +19,48 @@
   
   </head>
   <body>
-    <!-- NAVBAR -->
+    <!--NAVBAR-->
     <div class="no-print">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-faded bg-nav">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <nav class="navbar navbar-light bg-faded navbar-expand-lg">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="#"></a>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link" href="admin-dashboard.html">Home </a>
+                <a class="nav-link" href="admin-dashboard.html">Home
+                </a>
               </li>
-              <li class="nav-item active-menu">
-                <a class="nav-link" href="admin-settings.html" style="color: #4688F1;">Settings<span class="sr-only">(current)</span></a>
+              <li class="nav-item active">
+                <a class="nav-link" href="admin-settings.html">Settings</a>
+                <span class="sr-only">(current)</span>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Reports</a>
               </li>
             </ul>
           </div>
-          <span class="navbar-text">Steve Harrington <i class="icon-arrow-down"></i> </span> <!-- User's fullname -->
-          <a href="index.html">
-            <button class="btn-logout"><span>Logout</span></button>
+          <a class="user black-text" href="#">Steve Harrington
+            <i class="icon-user"></i>
           </a>
-        </nav>
-      </div>
+          <a href="index.html" class="btn btn-logout">Logout</a>
+        </div>
+      </nav>
     </div>
-    <!-- NAVBAR -->
+    <!--NAVBAR-->
     <!-- CONTENT -->
     <div class="container-fluid bg-content">
-      <div class="content">
+      <div class="content container">
         <div class="seal"></div>
         <h2> Employee Profiles </h2>
         <div class="menu-flex search-bar no-print">
           <div class="flex-search">
             <div class="input-group">
               <div class="input-group-btn">
-                <button id="selected" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button id="selected" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
                   Category
                 </button>
                 <!-- Supply dropdown menu categories, refer to database -->
@@ -75,8 +78,10 @@
             </div>
           </div>
           <div class="flex-print">
-            <a href="javascript:window.print()" class="card-link btn btn-outline-primary"><i class="fa fa-print" aria-hidden="true"></i> Print Employee Records</a>
-            <a href="employee-add.html" class="add-button btn btn-primary "><i class="fa fa-plus" aria-hidden="true"></i> Create Employee Profile</a>
+            <a href="javascript:window.print()" class="card-link btn btn-outline-primary">
+              <i class="fa fa-print" aria-hidden="true"></i> Print Employee Records</a>
+            <a href="employee-add.html" class="add-button btn btn-primary ">
+              <i class="fa fa-plus" aria-hidden="true"></i> Create Employee Profile</a>
           </div>
         </div>
         <div class="row table-records table-responsive">
@@ -97,21 +102,28 @@
                 <td>Teacher</td>
                 <td>Full-time</td>
                 <td>On-Leave</td>
-                <td class="no-print text-center"> 
+                <td class="no-print text-center">
                   <a href="employee-profile.html" class="btn btn-success btn-sm view-button">View</a>
-                  <a href="employee-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
+                  <a href="employee-add.html" class="btn btn-secondary btn-sm view-button">Edit</a>
+                </td>
               </tr>
             </tbody>
           </table>
-      </div>
+        </div>
         <nav aria-label="Page navigation" class="no-print">
           <ul class="pagination pagination-md justify-content-center">
             <li class="page-item disabled">
               <a class="page-link" href="#" tabindex="-1">Previous</a>
             </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">3</a>
+            </li>
             <li class="page-item">
               <a class="page-link" href="#">Next</a>
             </li>

@@ -22,36 +22,38 @@
   <body>
   <!-- NAVBAR -->
     <div class="no-print">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-faded bg-nav">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <nav class="navbar navbar-light bg-faded navbar-expand-lg">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="#"></a>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link" href="admin-dashboard.html">Home </a>
+                <a class="nav-link" href="admin-dashboard.html">Home
+                </a>
               </li>
-              <li class="nav-item active-menu">
-                <a class="nav-link" href="admin-settings.html" style="color: #4688F1;">Settings<span class="sr-only">(current)</span></a>
+              <li class="nav-item active">
+                <a class="nav-link" href="admin-settings.html">Settings</a>
+                <span class="sr-only">(current)</span>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Reports</a>
               </li>
             </ul>
           </div>
-          <span class="navbar-text">Steve Harrington <i class="icon-arrow-down"></i> </span> <!-- User's fullname -->
-          <a href="index.html">
-            <button class="btn-logout"><span>Logout</span></button>
+          <a class="user black-text" href="#">Steve Harrington
+            <i class="icon-user"></i>
           </a>
-        </nav>
-      </div>
+          <a href="index.html" class="btn btn-logout">Logout</a>
+        </div>
+      </nav>
     </div>
     <!-- NAVBAR -->
     <!-- CONTENT -->
     <div class="container-fluid bg-content">
-      <div class="content"> 
+      <div class="content container"> 
         <a href="employee-list.html" class="no-print"><h4><i class="fa fa-angle-left" aria-hidden="true"></i> Back to records list</h4></a>
         <div class="seal"></div>
         <div class="card">
