@@ -372,3 +372,8 @@ footer{
 .footer-items{
 	margin: auto;
 }
+
+/* REPORTS */
+.nowrap {
+	white-space: nowrap;
+}
