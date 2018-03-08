@@ -73,6 +73,7 @@
                   <div class="col-sm-4">
                     <h6 class="card-subtitle mb-2 link">Student ID: <span class="text-muted">0001</span></h6>
                     <h6 class="card-subtitle link mb-2 ">Student Level:<span class="text-muted"> Grade School</span></h6>
+                    <h6 class="card-subtitle link mb-2 ">Year Level/Section:<span class="text-muted"> IV - Spades</span></h6>
                     <h6 class="card-subtitle mb-2 link">Place of Birth: <span class=" text-muted">Davao City, Philippines</span></h6>
                     <h6 class="card-subtitle link mb-2 ">Date of Birth: <span class="text-muted">February 19, 2002</span></h6>
                   </div>
@@ -89,640 +90,291 @@
                 </div>
               </div>
             </div>
-            <div class="row records">
-              <div class="col-md-8 no-print">
-                <h2>Student Registration</h2>
-              </div>
-              <div class="col-md-4">
-                <div class="btn-group float-right no-print">
-                  <a href="student-profile-add.html" class="add-button btn btn-primary "><i class="fa fa-plus" aria-hidden="true"></i> Create Student Registration</a>
-                </div>
-            </div>
-          </div>
             <div class="row table-records table-responsive">
-              <table class="table table-bordered bg-nav table-hover">
-                <thead class="thead-light">
-                  <tr>
-                    <!-- Refer to database for headings -->
-                    <th scope="col">School Year</th>
-                    <th scope="col">Year Level</th>
-                    <th scope="col">Date Enrolled</th>
-                    <th scope="col">Enrollment Status</th>
-                    <th scope="col" class="no-print">Scholarship Status</th>
-                    <th scope="col" class="no-print">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>2018-2019</td>
-                    <td>Grade 6</td>
-                    <td>01-07-18</td>
-                    <td>Enrolled</td><!-- If paid, tag as enrolled. Else, pending-->
-                    <td class="no-print"><span class="no-print"><i class="fa fa-circle active-status"></i> </span> Active</td>
-                    <td class="no-print text-center">
-                      <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                      <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModal" aria-hidden="true">
-                          <div class="modal-dialog modal-lg">
-                              <div class="modal-content">
-                                  <div class="modal-header">
-                                      <h5 class="modal-title">Student Registration</h5>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
-                                  </div>
-                                <div class="modal-body text-left">
-                                  <h5 class="sm-headings">Student Details</h5>
-                                  <div class="row">
-                                    <div class="col-md-4">
-                                      <label>Student Code:</label>
-                                      <p>123456789</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label>Student Name:</label>
-                                        <p>Brown, Millie-Bobbie</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label>Student type:</label>
-                                        <p><b>OLD STUDENT</b></p>
-                                    </div>
-                                  </div>
-                                  <div class="row">
-                                      <div class="col-md-4">
-                                        <label>Year Level:</label>
-                                        <p>Grade 6</p>
-                                      </div>
-                                      <div class="col-md-4">
-                                          <label>Section:</label>
-                                          <p>St. Lorenzo Ruiz</p>
-                                        </div>
-                                    </div>
-                                    <h5 class="sm-headings">Enrollment Details</h5>
-                                    <div class="row text-left">
-                                        <div class="col-md-4">
-                                            <label>School Year:</label>
-                                            <p>2018-2019</p>
-                                        </div>
-                                      <div class="col-md-4">
-                                          <label>Date Enrolled:</label>
-                                          <p>January 07, 2018</p>
-                                      </div>
-                                      <div class="col-md-4">
-                                          <label>Enrollment Status:</label>
-                                          <p>Enrolled</p>
-                                      </div>
-                                    </div>
-                                    <h5 class="sm-headings">Scholarship Details</h5> 
-                                    <!--Not necessarily in the same table. 
-                                      Join mo lang scholarship table and student ID para makita anong scholarship nya that SY year-->
-                                    <div class="row">
-                                      <div class="col-md-4">
-                                          <label>Scholarship:</label>
-                                          <p>ESC Scholarship</p>
-                                      </div>
-                                      <div class="col-md-4">
-                                          <label>Validity:</label>
-                                          <p>1 year</p>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-link text-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-outline-primary"><i class="fa fa-print" aria-hidden="true"></i> Print Registration</button>
-                                </div>
-                              </div>
-                          </div>
+              <ul class="nav nav-tabs no-print">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#studentRegis">Registration</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#studentAcc">Financial Records</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#studentClasses">Subjects</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#studentLedger">Ledger</a>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <!-- STUDENT REGISTRATION -->
+                <div class="tab-pane active container" id="studentRegis">
+                  <div class="row records">
+                    <div class="col-md-8 no-print">
+                      <h2>Student Registration</h2>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="btn-group float-right no-print">
+                        <a href="student-profile-add.html" class="add-button btn btn-primary "><i class="fa fa-plus" aria-hidden="true"></i> Create Student Registration</a>
                       </div>
-                      <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModal" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Student Registration</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                          <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                  <div class="modal-body text-left">
-                                    <h5 class="sm-headings">Student Details</h5>
-                                    <div class="row">
-                                      <div class="col-md-4">
-                                        <label>Student Code:</label>
-                                        <p>123456789</p>
-                                      </div>
-                                      <div class="col-md-4">
-                                          <label>Student Name:</label>
-                                          <p>Brown, Millie-Bobbie</p>
-                                      </div>
-                                      <div class="col-md-4">
-                                          <label>Student type:</label>
-                                          <p><b>OLD STUDENT</b></p>
-                                      </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                          <label>Year Level:</label>
-                                          <p>Grade 6</p>
+                    </div>
+                  </div>
+                  <div class="row table-records table-responsive">
+                    <table class="table table-bordered bg-nav table-hover">
+                      <thead class="thead-light">
+                        <tr>
+                          <!-- Refer to database for headings -->
+                          <th scope="col">School Year</th>
+                          <th scope="col">Year Level</th>
+                          <th scope="col">Date Enrolled</th>
+                          <th scope="col">Enrollment Status</th>
+                          <th scope="col" class="no-print">Scholarship Status</th>
+                          <th scope="col" class="no-print">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>2018-2019</td>
+                          <td>Grade 6</td>
+                          <td>01-07-18</td>
+                          <td>Enrolled</td><!-- If paid, tag as enrolled. Else, pending-->
+                          <td class="no-print"><span class="no-print"><i class="fa fa-circle active-status"></i> </span> Active</td>
+                          <td class="no-print text-center">
+                            <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
+                            <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModal" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Student Registration</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
-                                        <div class="col-md-4">
-                                            <label>Section:</label>
-                                            <p>St. Lorenzo Ruiz</p>
-                                          </div>
-                                      </div>
-                                      <h5 class="sm-headings">Enrollment Details</h5>
-                                      <div class="row text-left">
+                                      <div class="modal-body text-left">
+                                        <h5 class="sm-headings">Student Details</h5>
+                                        <div class="row">
                                           <div class="col-md-4">
-                                              <label>School Year:</label>
-                                              <p>2018-2019</p>
+                                            <label>Student Code:</label>
+                                            <p>123456789</p>
                                           </div>
-                                        <div class="col-md-4">
-                                            <label>Date Enrolled:</label>
-                                            <p>January 07, 2018</p>
+                                          <div class="col-md-4">
+                                              <label>Student Name:</label>
+                                              <p>Brown, Millie-Bobbie</p>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <label>Student type:</label>
+                                              <p><b>OLD STUDENT</b></p>
+                                          </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <label>Enrollment Status:</label>
-                                            <p>Enrolled</p>
-                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                              <label>Year Level:</label>
+                                              <p>Grade 6</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Section:</label>
+                                                <p>St. Lorenzo Ruiz</p>
+                                              </div>
+                                          </div>
+                                          <h5 class="sm-headings">Enrollment Details</h5>
+                                          <div class="row text-left">
+                                              <div class="col-md-4">
+                                                  <label>School Year:</label>
+                                                  <p>2018-2019</p>
+                                              </div>
+                                            <div class="col-md-4">
+                                                <label>Date Enrolled:</label>
+                                                <p>January 07, 2018</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Enrollment Status:</label>
+                                                <p>Enrolled</p>
+                                            </div>
+                                          </div>
+                                          <h5 class="sm-headings">Scholarship Details</h5> 
+                                          <!--Not necessarily in the same table. 
+                                            Join mo lang scholarship table and student ID para makita anong scholarship nya that SY year-->
+                                          <div class="row">
+                                            <div class="col-md-4">
+                                                <label>Scholarship:</label>
+                                                <p>ESC Scholarship</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Validity:</label>
+                                                <p>1 year</p>
+                                            </div>
+                                          </div>
                                       </div>
-                                      <h5 class="sm-headings">Scholarship Details</h5> 
-                                      <!--Not necessarily in the same table. 
-                                        Join mo lang scholarship table and student ID para makita anong scholarship nya that SY year-->
-                                      <div class="row">
-                                        <div class="col-md-4">
-                                            <label>Scholarship:</label>
-                                            <p>ESC Scholarship</p>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label>Validity:</label>
-                                            <p>1 year</p>
-                                        </div>
+                                      <div class="modal-footer">
+                                          <button type="button" class="btn btn-link text-secondary" data-dismiss="modal">Close</button>
+                                          <button type="button" class="btn btn-outline-primary"><i class="fa fa-print" aria-hidden="true"></i> Print Registration</button>
                                       </div>
-                                  </div>
-                                  <div class="modal-footer">
-                                      <button type="button" class="btn btn-link text-secondary" data-dismiss="modal">Close</button>
-                                      <button type="button" class="btn btn-outline-primary"><i class="fa fa-print" aria-hidden="true"></i> Print Registration</button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                  <tr>
-                    <td>2017-2018</td>
-                    <td>Grade 5</td>
-                    <td>01-07-17</td>
-                    <td>Enrolled</td>
-                    <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
-                    <td class="text-center no-print">
-                        <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
-                        <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
-                  </tr>
-                </tbody>
-              </table>
+                            <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
+                        </tr>
+                        <tr>
+                          <td>2017-2018</td>
+                          <td>Grade 5</td>
+                          <td>01-07-17</td>
+                          <td>Enrolled</td>
+                          <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
+                          <td class="text-center no-print">
+                              <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
+                              <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModal" aria-hidden="true">
+                                  <div class="modal-dialog modal-lg">
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                              <h5 class="modal-title">Student Registration</h5>
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                          </div>
+                                        <div class="modal-body text-left">
+                                          <h5 class="sm-headings">Student Details</h5>
+                                          <div class="row">
+                                            <div class="col-md-4">
+                                              <label>Student Code:</label>
+                                              <p>123456789</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Student Name:</label>
+                                                <p>Brown, Millie-Bobbie</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Student type:</label>
+                                                <p><b>OLD STUDENT</b></p>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                              <div class="col-md-4">
+                                                <label>Year Level:</label>
+                                                <p>Grade 6</p>
+                                              </div>
+                                              <div class="col-md-4">
+                                                  <label>Section:</label>
+                                                  <p>St. Lorenzo Ruiz</p>
+                                                </div>
+                                            </div>
+                                            <h5 class="sm-headings">Enrollment Details</h5>
+                                            <div class="row text-left">
+                                                <div class="col-md-4">
+                                                    <label>School Year:</label>
+                                                    <p>2018-2019</p>
+                                                </div>
+                                              <div class="col-md-4">
+                                                  <label>Date Enrolled:</label>
+                                                  <p>January 07, 2018</p>
+                                              </div>
+                                              <div class="col-md-4">
+                                                  <label>Enrollment Status:</label>
+                                                  <p>Enrolled</p>
+                                              </div>
+                                            </div>
+                                            <h5 class="sm-headings">Scholarship Details</h5> 
+                                            <!--Not necessarily in the same table. 
+                                              Join mo lang scholarship table and student ID para makita anong scholarship nya that SY year-->
+                                            <div class="row">
+                                              <div class="col-md-4">
+                                                  <label>Scholarship:</label>
+                                                  <p>ESC Scholarship</p>
+                                              </div>
+                                              <div class="col-md-4">
+                                                  <label>Validity:</label>
+                                                  <p>1 year</p>
+                                              </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-link text-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-outline-primary"><i class="fa fa-print" aria-hidden="true"></i> Print Registration</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
+                        </tr>
+                        <tr>
+                          <td>2017-2018</td>
+                          <td>Grade 5</td>
+                          <td>01-07-17</td>
+                          <td>Enrolled</td>
+                          <td class="no-print"><span class="no-print"><i class=" no-print fa fa-circle inactive-status"></i> </span> Inactive</td>
+                          <td class="text-center no-print">
+                              <button type="button" class="btn btn-success btn-sm view-button"data-toggle="modal" data-target="#viewModal">View</button>
+                              <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- STUDENT REGISTRATION -->
+                <!-- FINANCIAL RECORDS -->
+                <div class="tab-pane container" id="studentAcc">
+                  
+                </div>
+                <!-- FINANCIAL RECORDS -->
+                <!-- SUBJECTS TAKEN -->
+                <div class="tab-pane container" id="studentClasses">
+                  <div class="row records">
+                    <div class="col-md-8 no-print">
+                      <h2>Subjects</h2>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="btn-group float-right no-print">
+                        <a href="schoolyear-list-2.html" class="add-button btn btn-primary "><i class="fa fa-plus" aria-hidden="true"></i> View Offerings</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row table-records table-responsive">
+                    <table class="table table-bordered bg-nav table-hover">
+                      <thead class="thead-light">
+                        <tr>
+                          <!-- Refer to database for headings -->
+                          <th scope="col">Offering Code</th>
+                          <th scope="col">Subject Name</th>
+                          <th scope="col">Teacher Assigned</th>
+                          <th scope="col">Schedule</th>
+                          <th scope="col">Room</th>
+                          <th scope="col" class="no-print">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>10-300</td>
+                          <td>Marxism IV</td>
+                          <td>Boop, Mr. Boop of Commie Land</td>
+                          <td>8:00-9:00 AM</td>
+                          <td>F900</td>
+                          <td class="no-print text-center delete-btn">
+                            <button type="button" class="btn btn-danger" onclick="deleteRow(this)">Drop</button>
+                        </tr>
+                        <tr>
+                          <td>10-308</td>
+                          <td>Communism IV</td>
+                          <td>Zedong, Chairman Mao</td>
+                          <td>1:00-8:00 PM</td>
+                          <td>C704</td>
+                          <td class="text-center no-print delete-btn">
+                            <button type="button" class="btn btn-danger" onclick="deleteRow(this)">Drop</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- CONTENT -->
+    
+    <script type="text/javascript">
+      function deleteRow(obj){
+        $(obj).closest('tr').remove();
+      }
+    </script>
 
     <!-- Bootstrap CDN in case something glitches -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
