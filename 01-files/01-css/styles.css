@@ -156,6 +156,9 @@ navbar-light .active a{
   background: #CF4647;
   color: #ffffff;
 }
+.breadcrumb{
+	background-color: #F8FAFF !important;
+}
 
 /* CONTENT */
 .bg-content{
@@ -380,4 +383,11 @@ footer{
 /* REPORTS */
 .nowrap {
 	white-space: nowrap;
+}
+
+.line-break{
+	 line-height: 80px;
+}
+.line-break-child{
+	vertical-align: middle;
 }
