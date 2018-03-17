@@ -103,21 +103,26 @@
                 <td>Brown, Millie-Bobbie</td>
                 <td>Grade 10</td>
                 <td class="no-print"><i class="fa fa-circle active-status"></i> Active</td>
-                <td class="text-center no-print"><a href="student-profile.html" class="btn btn-success btn-sm view-button">View</a></td>
+                <td class="text-center no-print">
+                  <a href="student-profile.html" class="btn btn-success btn-sm view-button">View</a>
+                  <a href="student-registration-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
               </tr>
               <tr>
                 <td>0002</td>
                 <td>Dyer, Natalia</td>
                 <td>Grade 6</td>
                 <td class="no-print"><i class="fa fa-circle active-status"></i> Active</td>
-                <td class="text-center no-print"><a href="student-profile.html" class="btn btn-success btn-sm view-button">View</a></td>
+                <td class="text-center no-print">
+                  <a href="student-profile.html" class="btn btn-success btn-sm view-button">View</a>
+                  <a href="student-registration-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
               </tr>
               <tr>
                 <td>0003</td>
                 <td>Harbour, David </td>
                 <td>Grade 12</td>
                 <td class="no-print"><i class="fa fa-circle active-status no-print"></i> Active</td>
-                <td class="text-center no-print"><a href="#" class="btn btn-success btn-sm view-button">View</a></td>
+                <td class="text-center no-print"><a href="#" class="btn btn-success btn-sm view-button">View</a>
+                <a href="student-registration-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
               </tr>
             </tbody>
           </table>
@@ -165,7 +170,7 @@
     <script>
       var count=1;
       var add = function(){
-        if(count >= 5) return;
+        if(count >= 100) return;
         $('#addSibs').append('<div class="col-md-6"> <label>Sibling\'s Name</label><input type="text" class="form-control" placeholder="Last name, First name"></div><div class="col-md-6"><label>Year Graduated</label><input type="text" class="form-control" required></div>')
         count++;
       };

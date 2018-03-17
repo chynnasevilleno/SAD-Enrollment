@@ -12,7 +12,8 @@
       <link href="01-css/bootstrap.min.css" rel="stylesheet" type="text/css" />
       <link href="01-css/normalize.css" rel="stylesheet" type="text/css" />
       <link href="01-css/styles.css" rel="stylesheet" type="text/css" />
-
+      <link href="01-css/print.css" rel="stylesheet" type="text/css" media="print">
+    
       <!-- icons -->
       <link rel="stylesheet" href="04-fonts/simple-line-icons-master/css/simple-line-icons.css">
       <link rel="stylesheet" href="04-fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -20,109 +21,50 @@
   </head>
   <body>
     <!-- NAVBAR -->
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-light bg-faded bg-nav">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-light bg-faded navbar-expand-lg">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#"></a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="admin-dashboard.html">Home </a>
+              <a class="nav-link" href="admin-dashboard.html">Home
+              </a>
             </li>
-            <li class="nav-item active-menu">
-              <a class="nav-link" href="admin-settings.html" style="color: #4688F1;">Settings<span class="sr-only">(current)</span></a>
+            <li class="nav-item active">
+              <a class="nav-link" href="admin-settings.html">Settings</a>
+              <span class="sr-only">(current)</span>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Reports</a>
             </li>
           </ul>
         </div>
-        <span class="navbar-text">Steve Harrington <i class="icon-arrow-down"></i> </span> <!-- User's fullname -->
-        <a href="index.html">
-          <button class="btn-logout"><span>Logout</span></button>
+        <a class="user black-text" href="#">Steve Harrington
+          <i class="icon-user"></i>
         </a>
-      </nav>
-    </div>
+        <a href="index.html" class="btn btn-logout">Logout</a>
+      </div>
+    </nav>
     <!-- NAVBAR -->
     <!-- CONTENT -->
     <div class="container-fluid bg-content">
-      <div class="content">
-        <h2> School Year  </h2>
-        <div class="row search-bar">
-          <div class="col-lg-6"></div>
-          <div class="col-lg-6">
-            <button type="button" class="add-button btn btn-primary float-right" data-toggle="modal" data-target="#createNewSchoolYear"><i class="fa fa-plus" aria-hidden="true"></i> Add School Year Details</button>
-              <div class="modal fade" id="createNewSchoolYear" tabindex="-1" role="dialog" aria-labelledby="#createNewSchoolYear" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h3 class="modal-title" id="labelModal">Create New School Year</h3>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <form>
-                            <div class="row">
-                              <div class="col">
-                                <h3 class="link" style="margin-top: 10px;">School Year Details</h3>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-md-4">
-                              <label>School Year ID:</label>
-                                <p class="form-control-static">0001</p><!--incremental-->
-                              </div>
-                              <div class="col-md-6">
-                                <label>School Year Name:</label><br/>
-                                  <input type="text" class="form-control" required>
-                              </div>
-                            </div>
-                            <div class="row" id="addSubjects">
-                              <div class="col-md-6">
-                                <label>Date Start:</label>
-                                <div class="col-10 date-padding-reset">
-                                  <input class="form-control " type="date" value="2011-08-19" id="example-date-input">
-                                </div>
-                              </div>
-                              <div class="col-md-6">
-                                <label>Date End:</label><br/>
-                                  <div class="col-10 date-padding-reset">
-                                    <input class="form-control " type="date" value="2011-08-19" id="example-date-input">
-                                  </div>
-                              </div>
-                            </div>
-                          </form>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
-                          <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#confirmModal">Save school year</button>
-                          <div class="modal" id="confirmModal" tabindex="-1" role="dialog">
-                              <div class="modal-dialog" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title">Save changes</h5>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
-                                    </div>
-                                    <div class="modal-body">
-                                      <p>Are you sure you want to save this record?</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" id="saveChanges" class="btn btn-primary" data-dismiss="alert">Save changes</button>
-                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                            </div>
-                          </div>
-                    </div>
-                  </div>
-            <a href="#" class="card-link margin float-right print"><i class="fa fa-print" aria-hidden="true"></i> Print Records</a>
+      <div class="content container">
+        <div class="row records">
+          <div class="col">
+            <h2> Curriculum List</h2>
+          </div>
+          <div class="col">
+            <div class="flex-container no-print">
+              <div class="align-right-item">
+                <a href="javascript:window.print()" class="card-link  print flex-item btn btn-outline-primary">
+                      <i class="fa fa-print" aria-hidden="true"></i> Print Records</a>
+                <a href="schoolyear-list-add.html" class="add-button btn btn-primary flex-item">
+                  <i class="fa fa-plus" aria-hidden="true"></i> Create New School Year</a>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row table-records table-responsive">
@@ -130,24 +72,20 @@
             <thead class="thead-light">
               <tr>
                 <!-- Refer to database for headings -->
-                <th scope="col">School Year ID <i class="fa fa-sort" aria-hidden="true"></th>
-                <th scope="col">School Year Name <i class="fa fa-sort" aria-hidden="true"></th>
-                <th scope="col">Date Start - Date End </th>
+                <th scope="col">School Year Name </th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody><!--Please arrange with most recent first (descending)-->
               <tr>
-                <td>0001</td>
                 <td>SY. 2017 - 2018</td>
-                <td>June 8, 2017 - March 21, 2018</td>
-                <td class="text-center"><a href="subject-offering.html" class="btn btn-success btn-sm view-button btn-long-text ">View Offerings</a><br><a href="#" class="btn btn-secondary btn-sm btn-long-text view-button">Edit School Year</a></td>
+                <td class="text-center">
+                  <a href="schoolyear-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
               </tr>
               <tr>
-                <td>0002</td>
                 <td>SY. 2016 - 2017</td>
-                <td>June 8, 2016 - March 21, 2017</td>
-                <td class="text-center"><a href="subject-offering.html" class="btn btn-success btn-sm view-button btn-long-text ">View Offerings</a><br><a href="#" class="btn btn-secondary btn-sm btn-long-text view-button">Edit School Year</a></td>
+                <td class="text-center">
+                  <a href="schoolyear-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
               </tr>
             </tbody>
           </table>

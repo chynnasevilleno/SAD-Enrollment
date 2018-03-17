@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Transactions</title>
+  
+    <!-- css files -->
+    <link href="01-css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="01-css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="01-css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="01-css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="01-css/print.css" rel="stylesheet" type="text/css" media="print">
+    
+    <!-- icons -->
+    <link rel="stylesheet" href="04-fonts/simple-line-icons-master/css/simple-line-icons.css">
+    <link rel="stylesheet" href="04-fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    
+    <!-- jquery file-->
+    <script src="02-javascript/jquery-3.2.1.min.js"></script>
+  
+  </head>
+  <body>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-light bg-faded navbar-expand-lg">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="admin-dashboard.html">Home
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="admin-settings.html">Settings</a>
+              <span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Reports</a>
+            </li>
+          </ul>
+        </div>
+        <a class="user black-text" href="#">Steve Harrington
+          <i class="icon-user"></i>
+        </a>
+        <a href="index.html" class="btn btn-logout">Logout</a>
+      </div>
+    </nav>
+    <!--NAVBAR-->
+    <!--CONTENT-->
+    <div class="container-fluid bg-content wrapper">
+      <div class="content container">
+        <div class="content-heading margin">
+          <form action="" class="heading-label">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="card">
+                  <div class="card-header link">
+                    Payment Details
+                  </div>
+                  <div class="card-body" id="paymentsPanel">
+                    <div class="row">
+                      <div class="col">
+                        <div class="float-right">
+                          <button type="button" onclick="add()" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Payment</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="payment">
+                      <div class="row">
+                        <div class="col">
+                          <h5>Payment Details #1</h5>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="card-subtitle">Particular:</label>
+                          <!--DROPDOWN DAPAT NG MGA FEES AND ACCOUNTS NA STUFF IDK LOL-->
+                          <select class="custom-select btn-block" id="particularList" required>
+                            <option selected>Choose particular:</option>
+                            <option value="EnrollmentFee">Enrollment Fee</option>
+                            <option value="TuitionFee">Tuition Fee</option>
+                            <option value="BooksFee">Books</option>
+                            <!-- IF VAL()==TUITION, THEN SHOW MONTH INPUT // already did all this beloww-->
+                            <!-- IF VAL()==BOOKS, THEN SHOW AVAILABLE BOOKS DROPDOWN-->
+                            </select>
+                        </div>
+                        <div class="col-md-6" id="particularDetails"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="card-subtitle">Amount Paid:</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card"></div>
+                </div>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--CONTENT-->
+
+    
+    <!-- Bootstrap CDN in case something glitches -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+    <script src="02-javascript/bootstrap.bundle.js"></script>
+    <script src="02-javascript/bootstrap.js"></script>
+    <script src="02-javascript/bootstrap.min.js"></script>
+    
+    
+    <script>
+      $("#particularList").change(function(){
+        if ($(this).val() == "TuitionFee"){
+          //alert("Clicked tuition fee");
+          $( ".details" ).remove();
+          $('#particularDetails').append('<div class="details"><label class="card-subtitle">Month:</label><select class="custom-select btn-block" required><option selected>Choose payment month:</option><option value="January">January</option><option value="February">February</option><option value="March">March</option></select></div>');
+          // You may use JSON file for the months or a Django package
+        }
+        else if ($(this).val() == "BooksFee"){
+          //alert("Clicked Books fee");
+          $( ".details" ).remove();
+          $('#particularDetails').append('<div class="details"><label class="card-subtitle">Book Name:</label><select class="custom-select btn-block" required><option selected>Choose payment month:</option><option value="1">The Communist Manifesto</option></select></div>');
+          // You may use JSON file for the months or a Django package
+        }
+        else{
+            $( ".details" ).remove();
+        }
+      });
+    </script>
+  
+  </body>
+</html>
+    

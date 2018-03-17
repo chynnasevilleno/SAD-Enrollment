@@ -139,7 +139,7 @@ navbar-light .active a{
     color: #4688F1 !important;
 	font-weight: bold;
 }
-.nav-item{
+.nav-item, .uppercase{
     text-transform: uppercase;
 }
 .nav-item, .user{
@@ -289,11 +289,11 @@ navbar-light .active a{
 }
 
 /* USER RECORD */
-.card{
-	padding: 30px;
-}
 .records{
 	margin-top: 30px;
+}
+.card-section{
+	padding: 30px;
 }
 .link{
 	color: #000000;

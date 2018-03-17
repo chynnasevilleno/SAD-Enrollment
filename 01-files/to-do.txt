@@ -1,6 +1,7 @@
 TO DO:
 Generate Scholar List
 Promissory note shit
+change sections list
 
 Additional feature:
 https://www.amcharts.com/download/
