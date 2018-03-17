@@ -120,6 +120,13 @@ button, a{
 .navbar-light{
     background-color: #ffffff !important;
 }
+.container-reset{
+	width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+	margin-left: 15px !important;
+	margin-right: 15px !important;
+}
 .navbar-light .active a{
     color: #4688F1 !important;
 	font-weight: bold;
@@ -170,7 +177,19 @@ navbar-light .active a{
 	padding-top: 20px;
 }
 
+
 /* ADMIN DASHBOARD */
+.subtitle{
+	margin-top: 10px;
+	letter-spacing: 5px;
+}
+.subtitle-border{
+	background-color: #4285F4;
+ 	width: 10%;
+ 	height: 5px;
+ 	border-top: 3px solid #4285F4;
+    margin: 20px auto 20px auto;
+}
 .btn-links{
 	width: 230px;
 	height: 170px;
@@ -210,9 +229,19 @@ navbar-light .active a{
 	font-size: 60px;
 	color: #4688F1;
 }
+.quick-links{
+	display: flex;
+	justify-content: center;
+}
+.quick-links-item{
+	align-self: auto;
+}
 .quick-links h4{
 	color: #FFFFFF;
 	margin-top: 20px;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0;
 }
 .quick-links h3{
 	margin-top: 40px;
@@ -390,4 +419,18 @@ footer{
 }
 .line-break-child{
 	vertical-align: middle;
+}
+
+/*PROMISSORY NOTES*/
+.promissory-approved{
+	font-weight: bold;
+	color: #28a745;
+}
+.promissory-pending{
+	font-weight: bold;
+	color: #ffc107;
+}
+.promissory-rejected{
+	font-weight: bold;
+	color: #dc3545;
 }
