@@ -173,6 +173,9 @@ navbar-light .active a{
 	min-height: 80vh;
 	/*background-color: #f2f2f2;*/
 }
+.bg-dashboard{
+	background-color: #FFFFFF;
+}
 .content{
 	padding-top: 20px;
 }
@@ -252,6 +255,8 @@ navbar-light .active a{
     opacity: 0.9;
     filter: alpha(opacity=50); /* For IE8 and earlier */
 }
+
+
 
 /* Financial Records */
 .table-records{
