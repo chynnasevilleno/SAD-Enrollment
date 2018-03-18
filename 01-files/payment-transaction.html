@@ -61,37 +61,116 @@
                   </div>
                   <div class="card-body" id="paymentsPanel">
                     <div class="row">
-                      <div class="col">
-                        <div class="float-right">
-                          <button type="button" onclick="add()" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Payment</button>
+                      <div class="col-md-8">
+                        <div class="heading">
+                          <label>Choose transaction:</label>
+                        </div>
+                        <div class="btn-group btn-group-sm transactions" role="group" aria-label="Choose Transaction">
+                          <button type="button" class="btn btn-secondary active" id="enrollmentBtn">Enrollment</button>
+                          <button type="button" class="btn btn-secondary" id="othersBtn">Others</button>
                         </div>
                       </div>
+                      <div class="col-md-2">
+                        <button type="button" id="btn-add" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Payment</button>
+                        <button type="button" id="btn-add-particular" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Item</button>
+                      </div>
                     </div>
-                    <div class="payment">
-                      <div class="row">
+                    <!-- ENROLLMENT -->
+                    <div class="enrollmentPayment">
+                      <div class="row payment">
                         <div class="col">
-                          <h5>Payment Details #1</h5>
+                          <h5 class="payment-heading">Payment Details #<span class="count">1</span></h5>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-md-6">
                           <label class="card-subtitle">Particular:</label>
-                          <!--DROPDOWN DAPAT NG MGA FEES AND ACCOUNTS NA STUFF IDK LOL-->
                           <select class="custom-select btn-block" id="particularList" required>
                             <option selected>Choose particular:</option>
                             <option value="EnrollmentFee">Enrollment Fee</option>
                             <option value="TuitionFee">Tuition Fee</option>
-                            <option value="BooksFee">Books</option>
-                            <!-- IF VAL()==TUITION, THEN SHOW MONTH INPUT // already did all this beloww-->
-                            <!-- IF VAL()==BOOKS, THEN SHOW AVAILABLE BOOKS DROPDOWN-->
-                            </select>
+                          </select>
                         </div>
                         <div class="col-md-6" id="particularDetails"></div>
                       </div>
+                      <div class="row" id="paymentTypeRow">
+                        <div class="col-md-6">
+                          <div id="paymentTypeInput">
+                            <label class="card-subtitle">Payment Type:</label>
+                              <select class="custom-select btn-block" id="paymentType" required>
+                                <option selected>Choose payment type:</option>
+                                <option value="Full">Full Payment</option>
+                                <option value="Partial">Partial Payment</option>
+                                <!-- `Full` here refers to paying the whole SY's balance.
+                                      while `partial` refers to downpayment -->
+                              </select>
+                          </div> 
+                        </div>
+                        <div class="col-md-6">
+                          <div id="partial"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- OTHERS -->
+                    <div class="othersPayment">
                       <div class="row">
                         <div class="col-md-6">
-                          <label class="card-subtitle">Amount Paid:</label>
-                          <input type="text" class="form-control">
+                          <label class="card-subtitle">Particular Name:</label>
+                          <select class="custom-select btn-block" id="feesParticularList" required>
+                            <option selected>Choose particular:</option>
+                            <option value="1">Form 137</option>
+                            <option value="2">Diploma</option>
+                            <option value="3">Certificate</option>
+                            <option value="4">Entrance Test</option>
+                            <option value="5">Identification Card</option>
+                            <option value="6">Uniform</option>
+                            <option value="7">Books</option>
+                            <option value="others">Others</option>
+                          </select>
+                          <!-- is only saved in the student's payment transaction logs, but object is not saved in the database-->
+                          <!-- DATA GENERATED FROM FEES AND ACCOUNTS TABLE VALUES -->
+                          <!-- MODAL appears if others is selected -->
+                          <div class="modal" tabindex="-1" role="dialog" id="othersModal">
+                            <div class="modal-dialog modal-sm" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title">Item details</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  <div class="row">
+                                    <div class="col">
+                                      <label>Specific Name:</label>
+                                      <input type="text" class="form-control" id="particularName"/>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col">
+                                      <label>Price Amount:</label>
+                                      <input type="text" class="form-control" id="priceAmount"/>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary">Save Item</button>
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div id="othersInput"></div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="card-subtitle">Price Amount:</label>
+                          <h2 class="link"><span class="currency"> 0.00</span></h2>
+                          <!-- corresponds to the user input
+                                and/or the undocumented particular (others) -->
                         </div>
                       </div>
                     </div>
@@ -100,7 +179,115 @@
               </div>
               <div class="col-md-4">
                 <div class="card">
-                  <div class="card-body">HELLOO</div>
+                  <div class="card-header link">Payment Summary</div>
+                  <div class="card-body">
+                    <div class="enrollment-summary">
+                      <div class="row margin">
+                        <div class="container">
+                          <div class="summary-title">Account Balance:</div>
+                          <div class="summary-value link"><span class="currency"> 50,000.01</span></div>
+                        </div>
+                      </div>
+                      <div class="row margin">
+                        <div class="container">
+                          <div class="summary-title">Total Amount Paid:</div>
+                          <!-- IF TUITION, SUMMATION OF ALL STUDENT TRANSACTION-->
+                          <div class="summary-value link"><span class="currency"> 20,000.00</span></div>
+                        </div>
+                      </div>
+                      <div class="row margin">
+                        <div class="container">
+                          <div class="summary-title">Scholarship Deductions:</div>
+                          <!--REFER TO RELATIONSHIP BETWEEN STUDENT AND SCHOLARSHIP -->
+                          <div class="summary-value link"><span class="currency"> 2,000.00</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="others-summary">
+                      <div class="row margin">
+                        <div class="container">
+                          <div class="summary-title">Total Amount Due:</div>
+                          <div class="summary-value link"><span class="currency"> 3,000.00</span></div>
+                          <!--SUMMATION OF ALL PRICE AMOUNT WITH DISCOUNT -->
+                        </div>
+                      </div>
+                      <div class="row margin">
+                        <div class="container">
+                          <div class="summary-title">Subtotal:</div>
+                          <div class="summary-value link"><span class="currency"> 4,000.00</span></div>
+                          <!-- SUMMATION OF ALL PRICE AMOUNT *WITHOUT* DISCOUNT -->
+                        </div>
+                      </div>
+                      <div class="row margin">
+                        <div class="container">
+                          <div class="summary-title">Discount:</div>
+                          <!--SINCE IT'S NOT A PART OF ANY STUDENT SCHOLARSHIPS,
+                              THIS CAN ONLY BE APPLIED IF THERE'S A SPECIAL DISCOUNT
+                              WHICH I DO NOT KNOW-->
+                          <div class="summary-value link"><span class="currency"> 1,000.00</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#createTransactionModal">Create Transaction</button>
+                    <!-- TRANSACTION MODAL -->
+                    <div class="modal fade" id="createTransactionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitle">Transaction Details</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row">
+                              <div class="col">
+                                <label>Payment Method:</label>
+                                <select class="custom-select btn-block" id="paymentMethod" required>
+                                  <option selected>Choose payment method:</option>
+                                  <option value="Cash">Cash</option>
+                                  <option value="Cheque">Cheque</option>
+                                  <option value="Promissory">Promissory Note</option>
+                                  <option value="Others">Others</option>
+                                  <!-- `Others` like cows, lots, etc.
+                                        IF promissory, leave amount blank -->
+                                </select>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div id="paymentOthers"></div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <label>OR Number:</label>
+                                <input type="text" class="form-control" id="ORNumber"/>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <label>Payment Amount:</label>
+                                <input type="text" class="form-control" id="paymentAmount"/>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <label>Change:</label>
+                                <h2 id="change" class="link"><span class="currency">900.00</span></h2>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary">Create Transaction</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -108,6 +295,7 @@
         </div>
       </div>
     </div>
+    
     <!--CONTENT-->
 
     
@@ -118,27 +306,8 @@
     <script src="02-javascript/bootstrap.bundle.js"></script>
     <script src="02-javascript/bootstrap.js"></script>
     <script src="02-javascript/bootstrap.min.js"></script>
+    <script src="02-javascript/cashier-scripts.js"></script>
     
-    
-    <script>
-      $("#particularList").change(function(){
-        if ($(this).val() == "TuitionFee"){
-          //alert("Clicked tuition fee");
-          $( ".details" ).remove();
-          $('#particularDetails').append('<div class="details"><label class="card-subtitle">Month:</label><select class="custom-select btn-block" required><option selected>Choose payment month:</option><option value="January">January</option><option value="February">February</option><option value="March">March</option></select></div>');
-          // You may use JSON file for the months or a Django package
-        }
-        else if ($(this).val() == "BooksFee"){
-          //alert("Clicked Books fee");
-          $( ".details" ).remove();
-          $('#particularDetails').append('<div class="details"><label class="card-subtitle">Book Name:</label><select class="custom-select btn-block" required><option selected>Choose payment month:</option><option value="1">The Communist Manifesto</option></select></div>');
-          // You may use JSON file for the months or a Django package
-        }
-        else{
-            $( ".details" ).remove();
-        }
-      });
-    </script>
   
   </body>
 </html>

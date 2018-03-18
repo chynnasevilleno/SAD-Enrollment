@@ -439,3 +439,21 @@ footer{
 	font-weight: bold;
 	color: #dc3545;
 }
+
+/* PAYMENT TRANSACTION */
+.currency:before{
+	content: "\0020B1";
+}
+.payment, .addPayment{
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+.summary-title{
+	font-weight: bold;
+	font-size: 1em;
+}
+.summary-value{
+	font-weight: 400;
+	font-size: 2.5em;
+	line-height: 40px;
+}
