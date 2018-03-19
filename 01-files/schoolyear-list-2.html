@@ -104,7 +104,7 @@
                     <th scope="col">Teacher Assigned</th>
                     <th scope="col">Section Assigned</th>
                     <th scope="col">Capacity</th>
-                    <th scope="col" class="no-print">Actions</th>
+                    <th scope="col" class="no-print text-center">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -116,8 +116,9 @@
                     <td>St. Oh hai Mark</td>
                     <td><span>42<span><span>/45</span></td><!-- First span is students currently enrolled in that offering, Second span is student capacity-->
                     <td class="text-center no-print">
-                      <a href="schoolyear-list-2-students-list.html" class="btn btn-success btn-sm view-button">View</button>
-                      <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
+                      <a href="schoolyear-list-2-students-list.html" class="btn btn-success btn-sm view-button">View</a><br>
+                      <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a><br>
+                      <button type="button" onclick="deleteRow(this)" class="btn btn-sm btn-danger view-button">Delete</button></td>
                   </tr>
                   <tr>
                     <td>10-302</td>
@@ -127,8 +128,9 @@
                     <td>St. Gabriel</td>
                     <td>40/45</td>
                     <td class="text-center no-print"> 
-                      <a href="schoolyear-list-2-students-list.html" class="btn btn-success btn-sm view-button">View</button>
-                      <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
+                      <a href="schoolyear-list-2-students-list.html" class="btn btn-success btn-sm view-button">View</a><br/>
+                      <a href="student-profile-add.html" class="btn btn-secondary btn-sm view-button">Edit</a><br>
+                      <button type="button" onclick="deleteRow(this)" class="btn btn-sm btn-danger view-button">Delete</button></td>
                   </tr>
                 </tbody>
               </table>
@@ -159,6 +161,14 @@
       });
     </script>
 
+    <script>
+      function deleteRow(obj){
+        $(obj).closest('tr').remove();
+      }
+    </script>
+    
+    
+    
     <!-- Bootstrap CDN in case something glitches -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
