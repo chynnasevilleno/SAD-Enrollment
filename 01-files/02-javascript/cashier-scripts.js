@@ -5,7 +5,7 @@
 var count = 2;  // starting number of next transaction
 var message = "clicked"; //error handling
 
-$('.othersPayment, #btn-add-particular, #others-summary, .method').hide();
+$('.othersPayment, #btn-add-particular, #others-summary, .method, .partial, .others, .details, .tuitionPayment').hide();
 
 ////////////////////////////////////////////////
 //TRANSACTION TOGGLE SCRIPT
@@ -18,6 +18,7 @@ $('#othersBtn').click(function() {
 });
 $('#enrollmentBtn').click(function() {
   
+  $('.addParticularPayment').hide();
   $(this).addClass("active");
   $("#othersBtn").removeClass("active");
   $('.othersPayment, #btn-add-particular, #others-summary').hide();
@@ -31,28 +32,29 @@ $('#enrollmentBtn').click(function() {
 // TRIGGERS THE MONTH INPUT, ONLY APPEARS WHEN PARTICULAR == TUITION FEE 
 // DISABLES/ENABLES ADD PAYMENT BUTTON DEPENDING ON THE PARTICULAR
 $("#particularList").change(function(){
-  var month= '<div class="details">'+
+  /*var month= '<div class="details">'+
       '<label class="card-subtitle">Month:</label>'+
       '<select class="custom-select btn-block" required>'+
       '<option selected>Choose payment month:</option>'+
       '<option value="January">January</option>'+
       '<option value="February">February</option>'+
-      '<option value="March">March</option></select></div>';
+      '<option value="March">March</option></select></div>';*/
       
   if ($(this).val() != "TuitionFee"){
-      $( ".details" ).remove();             
-      $( "#paymentTypeRow" ).show();        
+      $( ".details").hide();             
+      $("#paymentTypeRow").show();        
       $("#btn-add").prop("disabled", true); //adds disabled attribute
                                             //to #btn-add if
                                             //particular is not tuition fee
-      $( ".addPayment" ).remove();
+      $(".addPayment").hide();
+      $('.tuitionPayment').hide();
   }
   else{
     //alert("Clicked tuition fee");
-      $( "#paymentTypeRow" ).hide();
-      $('#particularDetails').append(month);
+      $("#paymentTypeRow").hide();
+      $('.details').show();
       $("#btn-add").removeAttr('disabled');
-
+      $('.tuitionPayment').show();
     // You may use JSON file for the months or a Django package
   }
 });
@@ -62,16 +64,17 @@ $("#particularList").change(function(){
 // ONLY SHOWS UP IF PAYMENT TYPE == PARTIAL
 // DOES NOT APPEAR IF PARTICULAR == TUITION FEE
 $("#paymentType").change(function(){
-  var partial = '<div class="partial">'+
+  /*var partial = '<div class="partial">'+
                 '<label class="card-subtitle">Amount:</label>'+
                 '<input type="text" class="form-control">'+
-                '</div>';
+                '</div>';*/
                 
   if ($(this).val() == "Partial"){
-    $('#partial').append(partial);
+    //$('#partial').append(partial);
+    $( ".partial" ).show();
   }
   else{
-    $( ".partial" ).remove();
+    $( ".partial" ).hide();
   }
 });
   
@@ -79,14 +82,16 @@ $("#paymentType").change(function(){
 //INCREMENTS PAYMENT #
 //ADDS A NEW PAYMENT TRANSACTION FOR TUITION FEES *ONLY*
 //ISSUES: MAY SKIP PAYMENT NUMBERS. too lengthy.
-$("#btn-add").click(function(){
-  var transaction = '<div class="addPayment">'+
+var add = function (){
+    var num = 1;
+    if(num >=100) return;
+    var transaction = '<div class="addPayment addParticularPayment">'+
         '<div class="row paymentPanel">'+
           '<div class="col-md-10">'+
             '<h5 class="payment-heading">Payment Details #'+count+'</h5>'+
           '</div>'+
           '<div class="col-md-2">'+
-            '<button type="button" class="btn btn-danger btn-sm" onclick="deleteRow()">Remove</button>'+
+            '<button type="button" class="btn btn-danger btn-sm" onclick="deleteRow(this)">Remove</button>'+
           '</div>'+
         '</div>'+
         '<div class="row">'+
@@ -104,32 +109,43 @@ $("#btn-add").click(function(){
               '<option selected>Choose payment month:</option>'+
               '<option value="January">January</option>'+
               '<option value="February">February</option>'+
-              '<option value="March">March</option></select></div>';
+              '<option value="March">March</option></select></div>'+
             '</div>'+
+          '</div>'+
+          '<div class="row">'+
+            '<div class="col-md-6">'+
+              '<div class="tuitionPayment">'+
+               '<label class="card-subtitle">Amount:</label>'+
+               '<input type="text" class="form-control">'+
+              '</div>'+
+            '</div>'+
+          '</div>'+
           '<div class="col-md-6">'+
             '<div id="partial"></div>'+
           '</div>'+
       '</div>';
+      
     $('#paymentsPanel').append(transaction);
+    num++;
     count++;
- });
+ };
  
 
 ////////////////////////////////////////////////
 //FOR OTHERS INPUT IN PARTICULAR NAME
 //USE JSON TO PASS INPUT DATA TO THE APPENDED VALUES
 $("#feesParticularList").on("change",function(){
-  var selected = '<div class="others">'+
+ /* var selected = '<div class="others">'+
                 '<label class="card-subtitle">Specify:</label>'+
                 '<h3 class="link">Level 3 Backpack</h3>'+
-                '</div>';
+                '</div>';*/
                 
   if ($(this).val() == "others"){
-    $('#othersInput').append(selected);
     $('#othersModal').modal('show');
+    $('.others').show();
   }
   else{
-      $( ".others" ).remove();
+    $('.others').hide();
   }
 });
 
@@ -137,12 +153,14 @@ $("#feesParticularList").on("change",function(){
 ////////////////////////////////////////////////
 //ADDS ANOTHER PAYMENT TRANSACTION FOR OTHERS
 //ISSUES: 'OTHERS' MODAL DOESN'T WORK IN NEXT ITERATION
-$("#btn-add-particular").click(function(){
-  var transaction = '<div class="othersPaymentRows">'+
+var addParticular = function (){
+    var num = 1;
+    if(num >=100) return;
+  var transaction = '<div class="addParticularPayment">'+
       '<div class="row">'+
         '<div class="col-md-6">'+
           '<label class="card-subtitle">Particular Name:</label>'+
-          '<select class="custom-select btn-block" id="feesParticularList" required>'+
+          '<select onchange="particular(value)" class="custom-select btn-block" id="feesParticularList" required>'+
             '<option selected>Choose particular:</option>'+
             '<option value="1">Form 137</option>'+
             '<option value="2">Diploma</option>'+
@@ -153,9 +171,45 @@ $("#btn-add-particular").click(function(){
             '<option value="7">Books</option>'+
             '<option value="others">Others</option>'+
           '</select>'+
+          '<div class="modal" tabindex="-1" role="dialog" id="othersModal">'+
+            '<div class="modal-dialog modal-sm" role="document">'+
+              '<div class="modal-content">'+
+                '<div class="modal-header">'+
+                  '<h5 class="modal-title">Item details</h5>'+
+                  '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
+                    '<span aria-hidden="true">&times;</span>'+
+                  '</button>'+
+                '</div>'+
+                '<div class="modal-body">'+
+                  '<div class="row">'+
+                    '<div class="col">'+
+                      '<label>Specific Name:</label>'+
+                      '<input type="text" class="form-control" id="particularName"/>'+
+                    '</div>'+
+                  '</div>'+
+                  '<div class="row">'+
+                    '<div class="col">'+
+                      '<label>Price Amount:</label>'+
+                      '<input type="text" class="form-control" id="priceAmount"/>'+
+                    '</div>'+
+                  '</div>'+
+                '</div>'+
+                '<div class="modal-footer">'+
+                  '<button type="button" class="btn btn-primary">Save Item</button>'+
+                  '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>'+
+                '</div>'+
+              '</div>'+
+            '</div>'+
+          '</div>'+
         '</div>'+
-        '<div class="col-md-6">'+
-          '<div id="othersInput"></div>'+
+        '<div class="col-md-4">'+
+          '<div class="others" id="specify">'+
+            '<label class="card-subtitle">Specify:</label>'+
+            '<h3 class="link">Level 3 Backpack</h3>'+
+           '</div>'+
+        '</div>'+
+        '<div class="col-md-2">'+
+          '<button type="button" class="btn btn-danger btn-sm" onclick="deleteParticularRow(this)">Remove</button>'+
         '</div>'+
       '</div>'+
       '<div class="row">'+
@@ -166,8 +220,19 @@ $("#btn-add-particular").click(function(){
       '</div>'+
     '</div>';
     $('#paymentsPanel').append(transaction);
-});
+    num++;
+};
 
+
+function particular ($val){
+  if($val != "others"){
+    $('#specify').remove()
+  }
+  else{
+    $('#specify').show();
+    $('#othersModal').modal('show');
+  }
+};
 
 ////////////////////////////////////////////////
 //SPECIFY PAYMENT METHOD
@@ -197,7 +262,15 @@ $("#paymentMethod").change(function(){
 
 
 ////////////////////////////////////////////////
-//TOMORROW PLS FIX CHYNNA KJDSHAKJFGDSJHFGJHKDSF
-function deleteRow(){
-  $(obj).closest('.addPayment .paymentPanel').remove();
+//DELETE ROWS
+function deleteRow(obj){
+  $(obj).closest('.addPayment').remove();
 }
+function deleteParticularRow(obj){
+  $(obj).closest('.addParticularPayment').remove();
+}
+
+
+/*function deleteRow(obj){
+  $(obj).closest('.row').remove();
+}*/
