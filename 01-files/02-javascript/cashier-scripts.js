@@ -14,7 +14,7 @@ $('#othersBtn').click(function() {
   $(this).addClass("active");
   $('#enrollmentBtn').removeClass("active");
   $('.enrollmentPayment, .addPayment, .enrollment-summary, #btn-add').hide();
-  $('.othersPayment, #btn-add-particular, #others-summary').show();
+  $('.othersPayment, #btn-add-particular, #others-summary,.addParticularPayment').show();
 });
 $('#enrollmentBtn').click(function() {
   
@@ -23,7 +23,7 @@ $('#enrollmentBtn').click(function() {
   $("#othersBtn").removeClass("active");
   $('.othersPayment, #btn-add-particular, #others-summary').hide();
   $('.enrollmentPayment, #btn-add, .enrollment-summary').show();
-  $('.othersPaymentRows').remove();
+  $('.othersPaymentRows').hide();
   
 });
     

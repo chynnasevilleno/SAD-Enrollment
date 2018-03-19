@@ -54,13 +54,11 @@
       <div class="content container">
         <div class="row records">
           <div class="col">
-            <h2> Curriculum List</h2>
+            <h2>Existing School Years</h2>
           </div>
           <div class="col">
             <div class="flex-container no-print">
               <div class="align-right-item">
-                <a href="javascript:window.print()" class="card-link  print flex-item btn btn-outline-primary">
-                      <i class="fa fa-print" aria-hidden="true"></i> Print Records</a>
                 <a href="schoolyear-list-add.html" class="add-button btn btn-primary flex-item">
                   <i class="fa fa-plus" aria-hidden="true"></i> Create New School Year</a>
               </div>
@@ -80,12 +78,14 @@
               <tr>
                 <td>SY. 2017 - 2018</td>
                 <td class="text-center">
-                  <a href="schoolyear-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
+                  <a href="schoolyear-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a>
+                  <button type="button" onclick="deleteRow(this)" class="btn btn-sm btn-danger view-button">Delete</button></td>
               </tr>
               <tr>
                 <td>SY. 2016 - 2017</td>
                 <td class="text-center">
-                  <a href="schoolyear-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
+                  <a href="schoolyear-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a>
+                  <button type="button" onclick="deleteRow(this)" class="btn btn-sm btn-danger view-button">Delete</button></td>
               </tr>
             </tbody>
           </table>
@@ -118,17 +118,11 @@
 
             $("#selected:first-child").text($(this).text());
             $("#selected:first-child").val($(this).text());
-            if($("#selected:first-child").val() == "Status"){
-                $(".changeIfStatus").replaceWith("<h1> test </h1>"); // must change into dropdown
-            }
-            else{
-
-            }
-
          });
 
       });
     </script>
+    
     <script>
       var count=1;
       var add = function(){
@@ -137,6 +131,13 @@
         count++;
       };
     </script>
+    
+    <script>
+      function deleteRow(obj){
+        $(obj).closest('tr').remove();
+      }
+    </script>
+    
     <!-- Bootstrap CDN in case something glitches -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>

@@ -179,7 +179,9 @@ navbar-light .active a{
 .content{
 	padding-top: 20px;
 }
-
+.inner{
+	margin: 30px;
+}
 
 /* ADMIN DASHBOARD */
 .subtitle{
