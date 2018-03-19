@@ -5,7 +5,7 @@
 var count = 2;  // starting number of next transaction
 var message = "clicked"; //error handling
 
-$('.othersPayment, #btn-add-particular, #others-summary').hide();
+$('.othersPayment, #btn-add-particular, #others-summary, .method').hide();
 
 ////////////////////////////////////////////////
 //TRANSACTION TOGGLE SCRIPT
@@ -172,23 +172,24 @@ $("#btn-add-particular").click(function(){
 ////////////////////////////////////////////////
 //SPECIFY PAYMENT METHOD
 $("#paymentMethod").change(function(){
-  var method = '<div class="method">'+
+  /*var method = '<div class="method">'+
                 '<label class="card-subtitle">Specify:</label>'+
                 '<input type="text" class="form-control">'+
-                '</div>';
+                '</div>';*/
       
   if ($(this).val() == "Others"){
-    $('#paymentOthers').append(method);
+    //$('#paymentOthers').append(method);
+    $('.method').show();
     $("#paymentAmount").removeAttr('disabled');
     $("#ORNumber").removeAttr('disabled');
   }
   else if ($(this).val() == "Promissory"){
-    $( ".method" ).remove();
+    $( ".method" ).hide();
     $('#paymentAmount').prop("disabled", true);
     $('#ORNumber').prop("disabled", true);
   }
   else{
-    $( ".method" ).remove();
+    $( ".method" ).hide();
     $("#paymentAmount").removeAttr('disabled');
     $("#ORNumber").removeAttr('disabled');
   }
