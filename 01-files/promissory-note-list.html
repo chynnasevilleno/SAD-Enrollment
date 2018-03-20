@@ -50,8 +50,21 @@
   <!-- NAVBAR -->
   <!-- CONTENT -->
   <div class="container-fluid bg-content">
-    <div class="content container">
-      <h2> Promissory Notes </h2>
+      <div class="content container">
+        <div class="row records">
+          <div class="col">
+            <h2> Promissory Note List</h2>
+          </div>
+          <div class="col">
+            <div class="flex-container no-print">
+              <div class="align-right-item">
+                <a href="promissory-note-list-add.html" class="add-button btn btn-primary flex-item">
+                  <i class="fa fa-plus" aria-hidden="true"></i> Create Promissory Note</a>
+                  <!-- FOR CASHIER/ADMIN -->
+              </div>
+            </div>
+          </div>
+        </div>
       <div class="row table-records table-responsive">
         <table class="table table-bordered bg-nav table-hover">
           <thead class="thead-light">
@@ -87,8 +100,8 @@
               <td>February 2, 2018 02:00 PM</td>
               <td class="promissory-approved">Approved</td>
               <td>February 2018</td>
-              <td class="text-center"><a href="#" class="btn btn-success btn-sm view-button">View</a>
-                <a href="#" class="btn btn-secondary btn-sm view-button">Edit</a></td>
+              <td class="text-center">
+                <a href="promissory-note-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
             </tr>
             <tr>
               <td>5 hours ago</td>
@@ -128,8 +141,7 @@
               <td>February 2, 2018 10:00 AM</td>
               <td class="promissory-rejected">Rejected</td>
               <td>February 2018</td>
-              <td class="no-print text-center"><a href="#" class="btn btn-success btn-sm view-button">View</a>
-                <a href="#" class="btn btn-secondary btn-sm view-button">Edit</a></td>
+              <td class="no-print text-center"><a href="promissory-note-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a></td>
             </tr>
           </tbody>
         </table>

@@ -94,6 +94,7 @@
                     <td>3/3</td>
                     <td class="text-center">
                       <a href="curriculum-subjects-list-add.html" class="btn btn-secondary btn-sm view-button no-print">Edit</a>
+                      <button type="button" onclick="deleteRow(this)" class="btn btn-sm btn-danger view-button">Delete</button>
                     </td>
                     <!-- For its edit function,redirect pa rin sa add page nya but remove the "add additional subjects below it"-->
                   </tr>
@@ -103,6 +104,7 @@
                     <td>3/5</td>
                     <td class="text-center">
                       <a href="#" class="btn btn-secondary btn-sm view-button no-print">Edit</a>
+                      <button type="button" onclick="deleteRow(this)" class="btn btn-sm btn-danger view-button">Delete</button>
                     </td>
                   </tr>
                 </tbody>
@@ -126,6 +128,13 @@
         count++;
       };
     </script>
+    
+    <script>
+      function deleteRow(obj){
+        $(obj).closest('tr').remove();
+      }
+    </script>
+    
 
     <script src="02-javascript/bootstrap.bundle.js"></script>
     <script src="02-javascript/bootstrap.js"></script>

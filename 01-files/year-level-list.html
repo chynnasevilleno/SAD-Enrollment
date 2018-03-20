@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <title>School Year Initialization</title>
+      <title>Year Level List</title>
 
       <!-- globals -->
       <meta charset="utf-8">
@@ -54,13 +54,13 @@
       <div class="content container">
         <div class="row records">
           <div class="col">
-            <h2>Existing School Years</h2>
+            <h2>Existing Year Levels</h2>
           </div>
           <div class="col">
             <div class="flex-container no-print">
               <div class="align-right-item">
                 <a href="schoolyear-list-add.html" class="add-button btn btn-primary flex-item">
-                  <i class="fa fa-plus" aria-hidden="true"></i> Create New School Year</a>
+                  <i class="fa fa-plus" aria-hidden="true"></i> Create Year Level</a>
               </div>
             </div>
           </div>
@@ -70,21 +70,21 @@
             <thead class="thead-light">
               <tr>
                 <!-- Refer to database for headings -->
-                <th scope="col">School Year Name </th>
-                <th scope="col">Actions</th>
+                <th scope="col">Year Level </th>
+                <th scope="col" class="text-center">Actions</th>
               </tr>
             </thead>
-            <tbody><!--Please arrange with most recent first (descending)-->
+            <tbody>
               <tr>
-                <td>SY. 2017 - 2018</td>
+                <td>Grade 10</td>
                 <td class="text-center">
-                  <a href="schoolyear-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a>
+                  <a href="year-level-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a>
                   <button type="button" onclick="deleteRow(this)" class="btn btn-sm btn-danger view-button">Delete</button></td>
               </tr>
               <tr>
-                <td>SY. 2016 - 2017</td>
+                <td>Grade 9</td>
                 <td class="text-center">
-                  <a href="schoolyear-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a>
+                  <a href="year-level-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a>
                   <button type="button" onclick="deleteRow(this)" class="btn btn-sm btn-danger view-button">Delete</button></td>
               </tr>
             </tbody>
@@ -109,8 +109,6 @@
 
     <!-- JQUERY -->
     <script src="02-javascript/jquery-3.2.1.min.js"></script>
-
-    <!-- Allows dropdown menu to select child -->
 
     
     <script>
