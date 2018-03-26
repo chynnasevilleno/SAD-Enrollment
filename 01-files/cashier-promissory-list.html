@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Promissory Note Request List</title>
+
+      <!-- globals -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- css files -->
+      <link href="01-css/bootstrap.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/normalize.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/styles.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/print.css" rel="stylesheet" type="text/css" media="print">
+
+      <!-- icons -->
+      <link rel="stylesheet" href="04-fonts/simple-line-icons-master/css/simple-line-icons.css">
+      <link rel="stylesheet" href="04-fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <!--NAVBAR-->
+    <div class="no-print">
+      <nav class="navbar navbar-light bg-faded navbar-expand-lg">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="admin-dashboard.html">Home
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="admin-settings.html">Settings</a>
+                <span class="sr-only">(current)</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Reports</a>
+              </li>
+            </ul>
+          </div>
+          <a class="user black-text" href="#">Steve Harrington
+            <i class="icon-user"></i>
+          </a>
+          <a href="index.html" class="btn btn-logout">Logout</a>
+        </div>
+      </nav>
+    </div>
+    <!--NAVBAR-->
+    <!-- CONTENT -->
+    <div class="container-fluid bg-content">
+      <div class="content container">
+        <div class="seal"></div>
+        <div class="menu-flex search-bar margin">
+          <div class="flex-search">
+            <h2> Promissory Note Request List </h2>
+          </div>
+          <div class="flex-print  no-print">
+            <a href="javascript:window.print()" class="card-link flex-item print btn btn-outline-primary">
+              <i class="fa fa-print" aria-hidden="true"></i> Print Promissory List</a>
+            <a href="cashier-promissory-list-add.html" class="add-button btn btn-primary flex-item">
+              <i class="fa fa-plus" aria-hidden="true"></i> Create New Request</a>
+          </div>
+        </div>
+        <ul class="nav nav-tabs no-print" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#all">All</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#approved">Approved</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#pending">Pending</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#denied">Denied</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div id="all" class="tab-pane fade in active">
+            <!-- all requests; based on the database and the attribute 'status' of the request -->
+            <div class="row table-records table-responsive">
+              <table class="table table-bordered bg-nav table-hover">
+                <thead class="thead-light">
+                  <tr>
+                    <!-- Refer to database for headings -->
+                    <th scope="col">School Year</th>
+                    <th scope="col">Student ID</th>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Grade Level</th>
+                    <th scope="col">Date Requested</th>
+                    <th scope="col">Date of Due Payment</th>
+                    <th scope="col">Status</th>
+                    <th scope="col" class="no-print">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> 2017-2018 </td>
+                    <td> 0001 </td>
+                    <td> Brown, Millie-Bobbie </td>
+                    <td> Grade 10 </td>
+                    <td> October 18, 2017 </td>
+                    <td> November 18, 2017 </td>
+                    <td>
+                      <i class="fa fa-circle active-status"></i> Approved </td>
+                    <td class="text-center no-print">
+                      <a href="cashier-promissory-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a>
+                    </td>
+                    <!-- if user is Cashier, use these actions -->
+                    <!-- if user is Admin, use these actions: <td class="text-center"><a href="#" class="btn btn-success btn-sm view-button">Approve</a><a href="3" class="btn btn-danger btn-sm view-button">Deny</a></td> -->
+                  </tr>
+                  <tr>
+                    <td> 2017-2018 </td>
+                    <td> 0001 </td>
+                    <td> Brown, Millie-Bobbie </td>
+                    <td> Grade 10 </td>
+                    <td> November 24, 2017 </td>
+                    <td> December 14, 2017 </td>
+                    <td>
+                      <i class="fa fa-circle active-status"></i> Approved </td>
+                    <td class="text-center no-print">
+                      <a href="cashier-promissory-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td> 2017-2018 </td>
+                    <td> 0004 </td>
+                    <td> Heaton, Charlie </td>
+                    <td> Grade 1 </td>
+                    <td> January 5, 2017 </td>
+                    <td> February 5, 2017 </td>
+                    <td>
+                      <i class="fa fa-circle text-warning"></i> Pending</td>
+                    <td class="text-center no-print">
+                      <a href="cashier-promissory-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td> 2017-2018 </td>
+                    <td> 0002 </td>
+                    <td> Dyer, Natalia </td>
+                    <td> Grade 6 </td>
+                    <td> January 10, 2017 </td>
+                    <td> February 8, 2017 </td>
+                    <td>
+                      <i class="fa fa-circle inactive-status"></i> Denied </td>
+                    <td class="text-center no-print">
+                      <a href="cashier-promissory-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td> 2017-2018 </td>
+                    <td> 0007 </td>
+                    <td> MclAughlin, Caleb </td>
+                    <td> Grade 3 </td>
+                    <td> January 23, 2017 </td>
+                    <td> February 20, 2017 </td>
+                    <td>
+                      <i class="fa fa-circle text-warning"></i> Pending</td>
+                    <td class="text-center no-print">
+                      <a href="cashier-promissory-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="approved" class="tab-pane fade">
+            <!-- view requests that are approved -->
+            <div class="row table-records table-responsive">
+              <table class="table table-bordered bg-nav table-hover">
+                <thead class="thead-light">
+                  <tr>
+                    <!-- Refer to database for headings -->
+                    <th scope="col">School Year</th>
+                    <th scope="col">Student ID</th>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Grade Level</th>
+                    <th scope="col">Date Requested</th>
+                    <th scope="col">Date of Due Payment</th>
+                    <th scope="col">Status</th>
+                    <th scope="col" class="no-print">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> 2017-2018 </td>
+                    <td> 0001 </td>
+                    <td> Brown, Millie-Bobbie </td>
+                    <td> Grade 10 </td>
+                    <td> October 18, 2017 </td>
+                    <td> November 18, 2017 </td>
+                    <td>
+                      <i class="fa fa-circle active-status"></i> Approved </td>
+                    <td class="text-center no-print">
+                      <a href="cashier-promissory-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a>
+                    </td>
+                    <!-- if user is Cashier, use these actions -->
+                    <!-- if user is Admin, use these actions: <td class="text-center"><a href="#" class="btn btn-success btn-sm view-button">Approve</a><a href="3" class="btn btn-danger btn-sm view-button">Deny</a></td> -->
+                  </tr>
+                  <tr>
+                    <td> 2017-2018 </td>
+                    <td> 0001 </td>
+                    <td> Brown, Millie-Bobbie </td>
+                    <td> Grade 10 </td>
+                    <td> November 24, 2017 </td>
+                    <td> December 14, 2017 </td>
+                    <td>
+                      <i class="fa fa-circle active-status"></i> Approved </td>
+                    <td class="text-center no-print">
+                      <a href="cashier-promissory-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="pending" class="tab-pane fade">
+            <div class="row table-records table-responsive">
+              <table class="table table-bordered bg-nav table-hover">
+                <thead class="thead-light">
+                  <tr>
+                    <!-- Refer to database for headings -->
+                    <th scope="col">School Year</th>
+                    <th scope="col">Student ID</th>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Grade Level</th>
+                    <th scope="col">Date Requested</th>
+                    <th scope="col">Date of Due Payment</th>
+                    <th scope="col">Status</th>
+                    <th scope="col" class="no-print">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> 2017-2018 </td>
+                    <td> 0004 </td>
+                    <td> Heaton, Charlie </td>
+                    <td> Grade 1 </td>
+                    <td> January 5, 2017 </td>
+                    <td> February 5, 2017 </td>
+                    <td>
+                      <i class="fa fa-circle text-warning"></i> Pending</td>
+                    <td class="text-center no-print">
+                      <a href="cashier-promissory-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td> 2017-2018 </td>
+                    <td> 0007 </td>
+                    <td> MclAughlin, Caleb </td>
+                    <td> Grade 3 </td>
+                    <td> January 23, 2017 </td>
+                    <td> February 20, 2017 </td>
+                    <td>
+                      <i class="fa fa-circle text-warning"></i> Pending</td>
+                    <td class="text-center no-print">
+                      <a href="cashier-promissory-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="denied" class="tab-pane fade">
+            <div class="row table-records table-responsive">
+              <table class="table table-bordered bg-nav table-hover">
+                <thead class="thead-light">
+                  <tr>
+                    <!-- Refer to database for headings -->
+                    <th scope="col">School Year</th>
+                    <th scope="col">Student ID</th>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Grade Level</th>
+                    <th scope="col">Date Requested</th>
+                    <th scope="col">Date of Due Payment</th>
+                    <th scope="col">Status</th>
+                    <th scope="col" class="no-print">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> 2017-2018 </td>
+                    <td> 0002 </td>
+                    <td> Dyer, Natalia </td>
+                    <td> Grade 6 </td>
+                    <td> January 10, 2017 </td>
+                    <td> February 8, 2017 </td>
+                    <td>
+                      <i class="fa fa-circle inactive-status"></i> Denied </td>
+                    <td class="text-center no-print">
+                      <a href="cashier-promissory-list-add.html" class="btn btn-secondary btn-sm view-button">Edit</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <nav aria-label="Page navigation" class="no-print">
+          <ul class="pagination pagination-md justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- CONTENT -->
+
+    <!-- JQUERY -->
+    <script src="02-javascript/jquery-3.2.1.min.js"></script>
+
+    <!-- Allows dropdown menu to select child -->
+    <script>
+    $(function(){
+
+      $(".dropdown-menu a").click(function(){
+
+            $("#selected:first-child").text($(this).text());
+            $("#selected:first-child").val($(this).text());
+            if($("#selected:first-child").val() == "Status"){
+                $(".changeIfStatus").replaceWith("<h1> test </h1>"); // must change into dropdown
+            }
+            else{
+
+            }
+
+         });
+
+      });
+    </script>
+
+    <!-- Bootstrap CDN in case something glitches -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+    <script src="02-javascript/bootstrap.bundle.js"></script>
+    <script src="02-javascript/bootstrap.js"></script>
+    <script src="02-javascript/bootstrap.min.js"></script>
+
+  </body>
+</html>

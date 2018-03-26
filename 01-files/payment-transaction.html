@@ -1,0 +1,465 @@
+<html lang="en">
+  <head>
+    <title>Transactions</title>
+  
+    <!-- css files -->
+    <link href="01-css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="01-css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="01-css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="01-css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="01-css/print.css" rel="stylesheet" type="text/css" media="print">
+    
+    <!-- icons -->
+    <link rel="stylesheet" href="04-fonts/simple-line-icons-master/css/simple-line-icons.css">
+    <link rel="stylesheet" href="04-fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    
+    <script
+          src="https://code.jquery.com/jquery-3.3.1.js"
+          integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+          crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
+  
+  </head>
+  <body>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-light bg-faded navbar-expand-lg">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="admin-dashboard.html">Home
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="admin-settings.html">Settings</a>
+              <span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Reports</a>
+            </li>
+          </ul>
+        </div>
+        <a class="user black-text" href="#">Steve Harrington
+          <i class="icon-user"></i>
+        </a>
+        <a href="index.html" class="btn btn-logout">Logout</a>
+      </div>
+    </nav>
+    <!--NAVBAR-->
+    <!--CONTENT-->
+    <div class="container-fluid bg-content wrapper">
+      <div class="content container">
+        <div class="content-heading margin">
+          <form action="" id="cashierTransaction" class="heading-label">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="card">
+                  <div class="card-header link">
+                    Payment Details
+                  </div>
+                  <div class="card-body" id="paymentsPanel">
+                    <div class="row margin">
+                      <div class="col-md-8">
+                        <div class="heading">
+                          <label>Choose transaction:</label>
+                        </div>
+                        <div class="btn-group btn-group-sm transactions" role="group" aria-label="Choose Transaction">
+                          <button type="button" class="btn btn-secondary active" id="enrollmentBtn">Enrollment</button>
+                          <button type="button" class="btn btn-secondary" id="othersBtn">Others</button>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <button type="button" id="btn-add" onclick="add()" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Payment</button>
+                        <button type="button" id="btn-add-particular" onclick="addParticular()" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Item</button>
+                      </div>
+                    </div>
+                    <!-- ENROLLMENT -->
+                    <div class="enrollmentPayment">
+                      <div class="row payment">
+                        <div class="col">
+                          <h5 class="payment-heading">Payment Details #<span class="count">1</span></h5>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="card-subtitle">Particular:</label>
+                          <select class="custom-select btn-block" name="particularList" id="particularList" required>
+                            <option selected>Choose particular:</option>
+                            <option value="EnrollmentFee">Enrollment Fee</option>
+                            <option value="TuitionFee">Tuition Fee</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="details">
+                           <label class="card-subtitle">Month:</label>  
+                           <select name="monthTuition" class="custom-select btn-block" required>  
+                           <option selected>Choose payment month:</option>  
+                           <option value="January">January</option>  
+                           <option value="February">February</option>  
+                           <option value="March">March</option></select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="tuitionPayment">
+                           <label class="card-subtitle">Amount:</label>  
+                           <input type="text" name="amountTuition" id="amountTuition" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row" id="paymentTypeRow">
+                        <div class="col-md-6">
+                          <div id="paymentTypeInput">
+                            <label class="card-subtitle">Payment Type:</label>
+                              <select class="custom-select btn-block" name="paymentType" id="paymentType" required>
+                                <option selected>Choose payment type:</option>
+                                <option value="Full">Full Payment</option>
+                                <option value="Partial">Partial Payment</option>
+                                <!-- `Full` here refers to paying the whole SY's balance.
+                                      while `partial` refers to downpayment -->
+                              </select>
+                          </div> 
+                        </div>
+                        <div class="col-md-6">
+                          <div class="partial"> 
+                           <label class="card-subtitle">Amount:</label>  
+                           <input type="text" name="amountPartial" id="amountPartial" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- OTHERS -->
+                    <div class="othersPayment">
+                      <div class="addParticularPayment">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label class="card-subtitle">Particular Name:</label>
+                            <select class="custom-select btn-block" name="feesParticularList" id="feesParticularList" required>
+                              <option selected>Choose particular:</option>
+                              <option value="1">Form 137</option>
+                              <option value="2">Diploma</option>
+                              <option value="3">Certificate</option>
+                              <option value="4">Entrance Test</option>
+                              <option value="5">Identification Card</option>
+                              <option value="6">Uniform</option>
+                              <option value="7">Books</option>
+                              <option value="others">Others</option>
+                            </select>
+                            <!-- is only saved in the student's payment transaction logs, but object is not saved in the database-->
+                            <!-- DATA GENERATED FROM FEES AND ACCOUNTS TABLE VALUES -->
+                            <!-- MODAL appears if others is selected -->
+                            <div class="modal" tabindex="-1" role="dialog" id="othersModal">
+                              <div class="modal-dialog modal-sm" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title">Item details</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <div class="row">
+                                      <div class="col">
+                                        <label>Specific Name:</label>
+                                        <input type="text" class="form-control" name="particularName" id="particularName"/>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col">
+                                        <label>Price Amount:</label>
+                                        <input type="text" class="form-control" name="priceAmount" id="priceAmount"/>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Save Item</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="others">
+                              <label class="card-subtitle">Specify:</label>  
+                              <h3 class="link">Level 3 Backpack</h3>  
+                             </div>
+                          </div>
+                          <div class="col-md-2">
+                            <button type="button" class="btn btn-danger btn-sm" onclick="deleteParticularRow(this)">Remove</button>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label class="card-subtitle">Price Amount:</label>
+                            <h2 class="link"><span class="currency"> 0.00</span></h2>
+                            <!-- corresponds to the user input
+                                  and/or the undocumented particular (others) -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-header link">Payment Summary</div>
+                  <div class="card-body">
+                    <div class="row margin">
+                      <div class="container">
+                        <div class="summary-title">Student ID:</div>
+                        <div class="link">0100001010100011</div>
+                      </div>
+                    </div>
+                    <div class="row margin">
+                      <div class="container">
+                        <div class="summary-title">Student Name:</div>
+                        <div class="link">Brown, Millie-Bobbie</div>
+                      </div>
+                    </div>
+                    <div class="enrollment-summary">
+                      <div class="row margin">
+                        <div class="container">
+                          <div class="summary-title">Account Balance:</div>
+                          <div class="summary-value link"><span class="currency"> 50,000.01</span></div>
+                        </div>
+                      </div>
+                      <div class="row margin">
+                        <div class="container">
+                          <div class="summary-title">Total Amount Paid:</div>
+                          <!-- IF TUITION, SUMMATION OF ALL STUDENT TRANSACTION-->
+                          <div class="summary-value link"><span class="currency"> 20,000.00</span></div>
+                        </div>
+                      </div>
+                      <div class="row margin">
+                        <div class="container">
+                          <div class="summary-title">Scholarship Deductions:</div>
+                          <!--REFER TO RELATIONSHIP BETWEEN STUDENT AND SCHOLARSHIP -->
+                          <div class="summary-value link"><span class="currency"> 2,000.00</span></div>
+                        </div>
+                      </div>
+                      <div class="row margin">
+                        <div class="container">
+                          <!-- SUMMATION OF TUITION FEE > AMOUNT AND IF ENROLLMENT FEE > PAYMENT TYPE > FULL PAYMENT THEN AMOUNT DUE == BALANCE
+                              IF ENROLLMENT FEE > PAYMENT TYPE > PARTIAL THEN TOTAL AMOUNT DUE == DOWNPAYMENT (DEFINED IN FEES AND ACCOUNTS)-->
+                          <div class="summary-title">Total Amount Due:</div>
+                          <div class="summary-value link"><span class="currency"> 3,000</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="others-summary">
+                      <div class="row margin">
+                        <div class="container">
+                          <div class="summary-title">Total Amount Due:</div>
+                          <div class="summary-value link"><span class="currency"> 3,000.00</span></div>
+                          <!--SUMMATION OF ALL PRICE AMOUNT WITH DISCOUNT -->
+                        </div>
+                      </div>
+                      <div class="row margin">
+                        <div class="container">
+                          <div class="summary-title">Subtotal:</div>
+                          <div class="summary-value link"><span class="currency"> 4,000.00</span></div>
+                          <!-- SUMMATION OF ALL PRICE AMOUNT *WITHOUT* DISCOUNT -->
+                        </div>
+                      </div>
+                      <div class="row margin">
+                        <div class="container">
+                          <div class="summary-title">Discount:</div>
+                          <!--SINCE IT'S NOT A PART OF ANY STUDENT SCHOLARSHIPS,
+                              THIS CAN ONLY BE APPLIED IF THERE'S A SPECIAL DISCOUNT
+                              WHICH I DO NOT KNOW-->
+                          <div class="summary-value link"><span class="currency"> 1,000.00</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <button type="button" class="btn btn-primary" id="createTransactionBtn" data-toggle="modal" data-target="#createTransactionModal" >Create Transaction</button>
+                    <!-- TRANSACTION MODAL -->
+                     <!---->
+                    <div class="modal fade" id="createTransactionModal" name="createTransactionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitle">Transaction Details</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row">
+                              <div class="col">
+                                <label>Payment Method:</label>
+                                <select class="custom-select btn-block" name="paymentMethod" id="paymentMethod" required>
+                                  <option selected>Choose payment method:</option>
+                                  <option value="Cash">Cash</option>
+                                  <option value="Cheque">Cheque</option>
+                                  <option value="Promissory">Promissory Note</option>
+                                  <option value="Others">Others</option>
+                                  <!-- `Others` like cows, lots, etc.
+                                        IF promissory, leave amount blank -->
+                                </select>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div id="paymentOthers">
+                                  <div class="method">  
+                                    <label class="card-subtitle">Specify:</label>  
+                                    <input type="text" name="specify" class="form-control">  
+                                   </div> 
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <label>OR Number:</label>
+                                <input type="text" class="form-control" name="ORNumber" id="ORNumber"/>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <label>Payment Amount:</label>
+                                <input type="text" class="form-control" name="amountPayment" id="paymentAmount"/>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <label>Change:</label>
+                                <h2 id="change" class="link"><span class="currency">900.00</span></h2>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary">Create Transaction</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <!--CONTENT-->
+    
+    <!-- Bootstrap CDN in case something glitches -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+    <!--<script src="02-javascript/jquery-3.3.1.js"></script>-->
+    <script src="02-javascript/bootstrap.bundle.js"></script>
+    <script src="02-javascript/bootstrap.js"></script>
+    <script src="02-javascript/bootstrap.min.js"></script>
+    <script src="02-javascript/cashier-scripts.js"></script>
+    <!--<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>-->
+    <script src="02-javascript/jquery-validation-1.17.0/dist/jquery.validate.js"></script>
+    <script src="02-javascript/jquery-validation-1.17.0/dist/additional-methods.js"></script>
+    <script>
+      $("#cashierTransaction").validate({
+        rules: {
+            particularList: {
+                required: true
+            },
+            amountPartial: {
+              required: true,
+              digits: true
+            },
+            amountTuition: {
+              required: true,
+              digits: true
+            },
+            particularName:{
+              required: true
+            },
+            priceAmount:{
+              required: true,
+              digits: true
+            },
+            particularList:{
+              required:true
+            },
+            paymentType:{
+              required:true
+            },
+            monthTuition:{
+              required:true
+            },
+            feesParticularList:{
+              required:true
+            },
+            paymentMethod:{
+              required:true
+            },
+            ORNumber:{
+              required:true
+            },
+            amountPayment:{
+              required:true,
+              digits:true
+            }
+        },
+        messages: {
+            particularList: {
+                required: "Please enter a particular"
+            },
+            amountPartial: {
+                required: "Please enter an amount",
+                digits: "Only numbers are accepted"
+            },
+            aamountTuition: {
+                required: "Please enter an amount",
+                digits: "Only numbers are accepted"
+            },
+            particularName:{
+              required: "Please enter a particular name"
+            },
+            priceAmount:{
+              required: "Please enter a price amount",
+              digits: "Only numbers are accepted"
+            },
+            particularList:{
+              required:"Please choose a particular"
+            },
+            paymentType:{
+              required:"Please choose a payment type"
+            },
+            monthTuition:{
+              required:"Please enter a month"
+            },
+            feesParticularList:{
+              required:"Please choose a particular"
+            },
+            paymentMethod:{
+              required:"Please enter a payment method"
+            },
+            ORNumber:{
+              required:"Please enter an OR number"
+            },
+            amountPayment:{
+              required:"Please enter a payment amount",
+              digits: "Only numbers are allowed"
+            }
+        },
+        submitHandler: function(form) {
+          form.submit();
+        }
+    });
+    
+
+    </script>
+    
+  </body>
+</html>

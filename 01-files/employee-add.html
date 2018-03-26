@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Employee Profile</title>
+
+      <!-- globals -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- css files -->
+      <link href="01-css/bootstrap.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/normalize.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/styles.css" rel="stylesheet" type="text/css" />
+
+      <!-- icons -->
+      <link rel="stylesheet" href="04-fonts/simple-line-icons-master/css/simple-line-icons.css">
+      <link rel="stylesheet" href="04-fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+
+      <!-- jquery file-->
+      <script src="02-javascript/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+   <!--NAVBAR-->
+   <nav class="navbar navbar-light bg-faded navbar-expand-lg">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="admin-dashboard.html">Home
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="admin-settings.html">Settings</a>
+              <span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Reports</a>
+            </li>
+          </ul>
+        </div>
+        <a class="user black-text" href="#">Steve Harrington
+          <i class="icon-user"></i>
+        </a>
+        <a href="index.html" class="btn btn-logout">Logout</a>
+      </div>
+    </nav>
+    <!--NAVBAR-->
+    <!-- FORM CONTENT -->
+    <div class="container-fluid bg-content">
+      <div class="content container">
+        <form class="heading-label">
+          <div class="row">
+            <div class="col">
+              <h3 class="link" style="margin-top: 10px;">Employee Profile</h3>
+            </div>
+          </div>
+            <!-- Emp First Name -->
+            <div class="row">
+              <div class="col-md-4">
+                <label>First Name:</label>
+                <input type="text" class="form-control" value="">
+              </div>
+              <div class="col-sm-4">
+                <label>Middle Name:</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="col-sm-4">
+                <label>Last Name:</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label>Employee Type:</label>
+                <select class="custom-select btn-block" id="selectEmpType" required>
+                  <option selected>Choose a type..</option>
+                  <option value="Teacher">Teacher</option>
+                  <option value="AcadHead">Academic Head</option>
+                  <option value="Registrar">Registrar Head</option>
+                  <option value="Cashier">Cashier</option>
+                  <option value="Admin">Admin</option>
+                </select>
+              </div>
+              <div class="units">
+                  
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Employee Status:</label><br>
+                <label class="custom-control custom-radio">
+                  <input id="radioFullTimeEmployee" name="radio-stacked" type="radio" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">Full Time</span>
+                </label>
+                <label class="custom-control custom-radio">
+                  <input id="radioInactiveEmployee" name="radio-stacked" type="radio" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">Inactive</span>
+                </label>
+                <label class="custom-control custom-radio">
+                  <input id="radioOnLeaveEmployee" name="radio-stacked" type="radio" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">On Leave</span>
+                </label>
+              </div>
+            </div>
+            <div class="btn-forms" style="display: flex; justify-content: flex-end">
+              <a href="employee-list.html" class="btn btn-link">Cancel</a>
+              <a href="#" class="btn btn-primary "><i class="fa fa-check-circle" aria-hidden="true"></i> Save Employee Profile</a>
+            </div>
+      </div>
+    </div>
+
+    <!-- Teacher input  add units-->
+    <script>
+      $("#selectEmpType").change(function(){
+        var count=0;
+        if ($(this).val() == "Teacher"){
+          count++;
+          $('.units').append('<div class="col isTeacher"><label>Units:</label><input type="number" class="form-control"></div>');
+        }
+        else{
+          if(count!=1){
+            $( ".isTeacher" ).remove();
+          }
+        }
+      });
+    </script>
+
+
+    <!-- Bootstrap CDN in case something glitches -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+    <script src="02-javascript/bootstrap.bundle.js"></script>
+    <script src="02-javascript/bootstrap.js"></script>
+    <script src="02-javascript/bootstrap.min.js"></script>
+
+  </body>
+</html>

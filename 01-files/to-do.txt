@@ -1,0 +1,17 @@
+TO DO:
+Generate Scholar List
+Promissory note shit
+change sections list
+
+Additional feature:
+https://www.amcharts.com/download/
+
+
+      <div class="details">  
+       <label class="card-subtitle">Month:</label>  
+       <select class="custom-select btn-block" required>  
+       <option selected>Choose payment month:</option>  
+       <option value="January">January</option>  
+       <option value="February">February</option>  
+       <option value="March">March</option></select>
+      </div>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Curriculum</title>
+      <!-- globals -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- css files -->
+      <link href="01-css/bootstrap.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/normalize.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/styles.css" rel="stylesheet" type="text/css" />
+
+      <!-- icons -->
+      <link rel="stylesheet" href="04-fonts/simple-line-icons-master/css/simple-line-icons.css">
+      <link rel="stylesheet" href="04-fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-light bg-faded navbar-expand-lg">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="admin-dashboard.html">Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin-settings.html">Settings</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="admin-reports.html">Reports</a>
+              <span class="sr-only">(current)</span>
+            </li>
+          </ul>
+        </div>
+        <a class="user black-text" href="#">Steve Harrington
+          <i class="icon-user"></i>
+        </a>
+        <a href="index.html" class="btn btn-logout">Logout</a>
+      </div>
+    </nav>
+    <!--NAVBAR-->
+    <!-- FORM CONTENT -->
+    <div class="container-fluid bg-content">
+      <div class="content container">
+        <h2> Reports </h2>
+        <div class="menu-flex search-bar no-print">
+            <div class="sort-reports">
+                <label for="sortReport" class="nowrap">Sort:
+                    <select class="custom-select btn-block sort-reports" id="sortReport" required>
+                        <option selected>Most Recent</option>
+                        <option value="1">Most Relevant</option>
+                        <option value="2">By Department</option>
+                        <option value="3">By Type</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <div class="row table-records table-responsive">
+            <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <!-- Refer to database for headings -->
+                    <th scope="col">Department</th>
+                    <th scope="col">Report Name</th>
+                    <th scope="col">Date Generated <i class="fa fa-sort sort-btn" aria-hidden="true"></th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Download</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cashier</td>
+                    <td>Daily Cash Report</td>
+                    <td>March 3, 2018</td>
+                    <td>CSV</td>
+                    <td class="text-center"><a href="#" class="btn btn-success btn-sm view-button">Download</a></td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        <nav aria-label="Page navigation" class="no-print">
+            <ul class="pagination pagination-md justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+            </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Bootstrap CDN in case something glitches -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+    <script src="02-javascript/bootstrap.bundle.js"></script>
+    <script src="02-javascript/bootstrap.js"></script>
+    <script src="02-javascript/bootstrap.min.js"></script>
+
+  </body>
+</html>

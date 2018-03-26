@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Subject Details</title>
+
+      <!-- globals -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- css files -->
+      <link href="01-css/bootstrap.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/normalize.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/styles.css" rel="stylesheet" type="text/css" />
+
+      <!-- icons -->
+      <link rel="stylesheet" href="04-fonts/simple-line-icons-master/css/simple-line-icons.css">
+      <link rel="stylesheet" href="04-fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-light bg-faded navbar-expand-lg">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="admin-dashboard.html">Home
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="admin-settings.html">Settings</a>
+              <span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Reports</a>
+            </li>
+          </ul>
+        </div>
+        <a class="user black-text" href="#">Steve Harrington
+          <i class="icon-user"></i>
+        </a>
+        <a href="index.html" class="btn btn-logout">Logout</a>
+      </div>
+    </nav>
+    <!--NAVBAR-->
+    <!-- FORM CONTENT -->
+    <div class="container-fluid bg-content">
+      <div class="content container">
+        <form class="heading-label">
+          <div class="row">
+            <div class="col">
+              <h3 class="link" style="margin-top: 10px;">Subject Details</h3>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label>Year Level:</label>
+                <select class="custom-select btn-block" required>
+                  <option selected>Choose year level...</option>
+                  2018</option>
+                  <option value="1">Grade 1</option>
+                  <option value="2">Grade 2</option>
+                  <option value="3">Grade 3</option>
+                  <option value="4">Grade 4</option>
+                </select>
+              </div>
+            </div>
+            <div id="addSubjects">
+              <div class="row">
+                <div class="col-md-2">
+                  <label>Subject ID:</label>
+                  <p class="form-control-static">0001</p>
+                </div>
+                <div class="col-md-6">
+                  <label>Subject Name:</label>
+                  <input type="text" class="form-control" required>
+                </div>
+                <div class="col-md-2">
+                  <label>Units:</label>
+                  <input type="number" class="form-control" required>
+                </div>
+                <div class="col-md-2 text-center delete-btn">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <button type="button" onclick="add()" class="btn btn-link">
+                <i class="fa fa-plus" aria-hidden="true"></i> Add additional subject</button>
+            </div>
+            <div class="btn-forms" style="display: flex; justify-content: flex-end">
+              <a href="curriculum-list.html" class="btn btn-link">Cancel</a>
+              <a href="#" class="btn btn-primary ">
+                <i class="fa fa-check-circle" aria-hidden="true"></i> Save Curriculum Details</a>
+            </div>
+        </form>
+      </div>
+    </div>
+    <!-- FORM CONTENT -->
+  <!-- Bootstrap CDN in case something glitches -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+  <script src="02-javascript/bootstrap.bundle.js"></script>
+  <script src="02-javascript/bootstrap.js"></script>
+  <script src="02-javascript/bootstrap.min.js"></script>
+
+    <script>
+      var count=1;
+      var add = function(){
+        if(count >= 100) return;
+        $('#addSubjects').append('<div class="row" id="addSubjects"><div class="col-md-2"> <label>Subject ID:</label><p class="form-control-static">0001</p></div><div class="col-md-6"><label>Subject Name:</label><input type="text" class="form-control" required></div><div class="col-md-2"><label>Units:</label><input type="number" class="form-control" required></div><div class="col-md-2 text-center delete-btn"><button type="button" class="btn btn-danger" onclick="deleteRow(this)">Remove</button></div></div>') // Increment SubjectID
+        count++;
+      };
+    </script>
+
+    <script>
+      function deleteRow(obj){
+        $(obj).closest('.row').remove();
+      }
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+    });
+    </script>
+  </body>
+</html>

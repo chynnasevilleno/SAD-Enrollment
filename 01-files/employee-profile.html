@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Employee Profile</title> <!-- change title to user's full name -->
+
+      <!-- globals -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+      <!-- css files -->
+      <link href="01-css/bootstrap.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/normalize.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/styles.css" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="01-css/print.css" type="text/css" media="print">
+
+      <!-- icons -->
+      <link rel="stylesheet" href="04-fonts/simple-line-icons-master/css/simple-line-icons.css">
+      <link rel="stylesheet" href="04-fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+  <!-- NAVBAR -->
+    <div class="no-print">
+      <nav class="navbar navbar-light bg-faded navbar-expand-lg">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="admin-dashboard.html">Home
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="admin-settings.html">Settings</a>
+                <span class="sr-only">(current)</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Reports</a>
+              </li>
+            </ul>
+          </div>
+          <a class="user black-text" href="#">Steve Harrington
+            <i class="icon-user"></i>
+          </a>
+          <a href="index.html" class="btn btn-logout">Logout</a>
+        </div>
+      </nav>
+    </div>
+    <!-- NAVBAR -->
+    <!-- CONTENT -->
+    <div class="container-fluid bg-content">
+      <div class="content container"> 
+        <!--<a href="employee-list.html" class="no-print"><h4><i class="fa fa-angle-left" aria-hidden="true"></i> Back to records list</h4></a>-->
+        <div class="seal"></div>
+        <div class="row">
+          <div class="col-md-6">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="admin-dashboard.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="employee-list.html">Employee Profiles</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Benitez, Zild</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-8">
+                    <h1 class="card-title">Benitez, Zild</h1>
+                  </div>
+                  <div class="col-md-4 float-right no-print">
+                    <br/>
+                    <a href="javascript:window.print()" class="card-link margin btn btn-outline-primary float-right"><i class="fa fa-print" aria-hidden="true"></i> Print Employee Profile</a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <h6 class="card-subtitle mb-2 link">Employee Type: <span class="text-muted">Teacher</span></h6>
+                    <h6 class="card-subtitle link mb-2 ">Work Type: <span class="text-muted">Full-time</span></h6>
+                    <!--IF TEACHER--> 
+                    <h6 class="card-subtitle link mb-2 ">Units held: <span class="text-success">6</span><span class="text-muted"></span>/21</span></h6>
+                    <!--If almost full, change span class="text-warning" if FULL units, change span class="text-danger"-->
+                    <h6 class="card-subtitle mb-2 link">Employee Status: <span class="text-muted"><i class="fa fa-circle text-warning"></i> On Leave</span></h6>
+                    <!--IF active, use i class="fa fa-circle text-success" IF Inactive, use i class="fa fa-circle text-danger"-->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row table-records table-responsive">
+              <ul class="nav nav-tabs no-print">
+                <!--IF TEACHER-->
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#employeeAdvisory">Advisory Class</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#employeeOfferings">Offerings</a>
+                </li>
+                <!--IF TEACHER-->
+                <!--IF System User-->
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#employeeLogs">Logs</a>
+                </li>
+                <!--IF System User-->
+              </ul>
+              <div class="tab-content">
+                <!-- advisory class list -->
+                <div class="tab-pane active container" id="employeeAdvisory">
+                  <div class="row records menu-flex">
+                    <div class="col-md-8 no-print">
+                      <h2>Section List</h2>
+                      <h4 class="link">St Mark</h4>
+                    </div>
+                    <div class="flex-print no-print">
+                      <a href="javascript:window.print()" class="card-link btn btn-outline-primary">
+                        <i class="fa fa-print" aria-hidden="true"></i>Print Section Details</a>
+                      <a href="section-details-add.html" class="add-button btn btn-primary ">
+                        <i class="fa fa-plus" aria-hidden="true"></i> Add Student</a>
+                    </div>
+                  </div>
+                  <div class="row table-records table-responsive">
+                    <table class="table table-bordered bg-nav table-hover">
+                      <thead class="thead-light">
+                        <tr>
+                          <!-- Refer to database for headings -->
+                          <th scope="col">Last Name <i class="fa fa-sort sort-btn" aria-hidden="true"></th>
+                          <th scope="col">First Name</th>
+                          <th scope="col">Middle Name</th>
+                          <th scope="col" class="no-print">Actions <i class="fa fa-sort sort-btn" aria-hidden="true"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Spades</td>
+                          <td>Spader</td>
+                          <td>Spadest</td>
+                          <td class="text-center no-print"><a href="student-profile.html" class="btn btn-success btn-sm view-button">View</a><!--Makita student profile nila-->
+                          <button type="button" data-toggle="modal" data-target=".confirmModal" class="btn btn-danger btn-sm view-button">Remove</button>
+                            <div class="modal fade confirmModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                      <h5 class="modal-title">Confirm Deletion</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <p>Would you like to delete user `Spades, Spader Spadest`?</p>
+                                  </div>
+                                  <div class="modal-footer">
+                                      <button type="button" class="btn text-secondary" data-dismiss="modal">Cancel</button>
+                                      <button type="button" class="btn btn-danger">Yes, delete student</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Banawan</td>
+                          <td>Jimuel</td>
+                          <td>Pacifico</td>
+                          <td class="text-center no-print"><a href="student-profile.html"  class="btn btn-success btn-sm view-button">View</a><!--Makita student profile nila-->
+                            <button type="button" data-toggle="modal" data-target=".confirmModal" class="btn btn-danger btn-sm view-button">Remove</button>
+                            <div class="modal fade confirmModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                      <h5 class="modal-title">Confirm Deletion</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <p>Would you like to delete user `Banawan, Jimuel Pacifico`?</p>
+                                  </div>
+                                  <div class="modal-footer">
+                                      <button type="button" class="btn text-secondary" data-dismiss="modal">Cancel</button>
+                                      <button type="button" class="btn btn-danger">Yes, delete student</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Neffe</td>
+                          <td>Fennald</td>
+                          <td>Barcebal</td>
+                          <td class="text-center no-print"><a href="student-profile.html" class="btn btn-success btn-sm view-button">View</a><!--Makita student profile nila-->
+                            <button type="button" data-toggle="modal" data-target=".confirmModal" class="btn btn-danger btn-sm view-button">Remove</button>
+                            <div class="modal fade confirmModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                      <h5 class="modal-title">Confirm Deletion</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <p>Would you like to delete user `Neffe, Fennald Barcebal`?</p>
+                                  </div>
+                                  <div class="modal-footer">
+                                      <button type="button" class="btn text-secondary" data-dismiss="modal">Cancel</button>
+                                      <button type="button" class="btn btn-danger">Yes, delete student</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- TEACHER OFFERINGS -->
+                <div class="tab-pane container" id="employeeOfferings">
+                  <div class="row records">
+                    <div class="col-md-8 no-print">
+                      <h2>Offerings</h2>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="btn-group float-right no-print">
+                        <a href="schoolyear-list-2.html" class="add-button btn btn-primary "><i class="fa fa-plus" aria-hidden="true"></i> View Offerings</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row table-records table-responsive">
+                    <table class="table table-bordered bg-nav table-hover">
+                      <thead class="thead-light">
+                        <tr>
+                          <!-- Refer to database for headings -->
+                          <th scope="col">Offering Code</th>
+                          <th scope="col">Subject Name</th>
+                          <th scope="col">Teacher Assigned</th>
+                          <th scope="col">Schedule</th>
+                          <th scope="col">Room</th>
+                          <th scope="col" class="no-print">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>10-300</td>
+                          <td>Marxism IV</td>
+                          <td>Boop, Mr. Boop of Commie Land</td>
+                          <td>8:00-9:00 AM</td>
+                          <td>F900</td>
+                          <td class="no-print text-center delete-btn">
+                            <button type="button" class="btn btn-danger" onclick="deleteRow(this)">Drop</button>
+                        </tr>
+                        <tr>
+                          <td>10-308</td>
+                          <td>Communism IV</td>
+                          <td>Zedong, Chairman Mao</td>
+                          <td>1:00-8:00 PM</td>
+                          <td>C704</td>
+                          <td class="text-center no-print delete-btn">
+                            <button type="button" class="btn btn-danger" onclick="deleteRow(this)">Drop</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!--SYSTEM USER LOGS FILTERED // ONLY IF SYSTEM USER -->
+                <div class="tab-pane container" id="employeeLogs">
+                  <div class="row table-records table-responsive">
+                    <div class="col-md-8 no-print">
+                      <h2>User Logs</h2>
+                    </div>
+                    <table class="table table-bordered bg-nav table-hover">
+                      <thead class="thead-light">
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col">User Actions</th>
+                          <th scope="col">Timestamp </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1 hour ago</td>
+                          <td>Added `Blaster Silonga` to Student Profiles <br/>
+                              Added `Salonga, Unique` to Employee Profiles <br/>
+                              Edited `Benitez, Zild` from Employee Profiles</td><!--New line for every new action-->
+                          <td>February 2, 2018 02:00 PM</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <nav aria-label="Page navigation" class="no-print">
+                    <ul class="pagination pagination-md justify-content-center">
+                      <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- CONTENT -->
+
+    <!-- Bootstrap CDN in case something glitches -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+    <script src="02-javascript/bootstrap.bundle.js"></script>
+    <script src="02-javascript/bootstrap.js"></script>
+    <script src="02-javascript/bootstrap.min.js"></script>
+  </body>
+</html>

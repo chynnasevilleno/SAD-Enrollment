@@ -1,0 +1,291 @@
+html{
+	font-family: Helvetica, sans-serif;
+}
+h1{
+	font-size: 29px;
+}
+h2, .student-count{
+	font-size: 24px;
+}
+h3{
+	font-size: 20px;
+}
+h4{
+	font-size: 16px;
+}
+h5, p{
+	font-size: 14px;
+}
+button, a{
+	border:0;
+	cursor: pointer;
+}
+/* NAVBAR */
+.user{
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+.black-text{
+    color: #000000;
+}
+.navbar-light{
+    background-color: #ffffff !important;
+}
+.navbar{
+    min-height: 70px !important;
+    font-size: 13px !important;
+}
+.active a{
+    color: #4688F1 !important;
+    font-weight: bold;
+    letter-spacing: 0.5vh;
+}
+.nav-item{
+    text-transform: uppercase;
+}
+.nav-item, .user{
+    color: #666666 !important;
+    font-size: 13px !important;
+    font-weight: 600;
+}
+.btn-logout{
+	margin-left: 20px;
+    background: #4285F4;
+    width: 80px;
+	color: #FFFFFF;
+	padding: 10px;
+	background: #4285F4;
+    border-radius: 5px;
+    font-size: 13px;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+}
+.btn-logout:hover {
+  background: #CF4647;
+  color: #ffffff;
+}
+
+/* CONTENT */
+.bg-content{
+	background-color: #F8FAFF;
+	min-height: 500px;
+	/*background-color: #f2f2f2;*/
+}
+.content{
+	padding: 40px;
+}
+
+/* ADMIN DASHBOARD */
+.btn-links{
+	width: 230px;
+	height: 170px;
+	background: #132B51;
+	box-shadow: 0 4px 4px 0 rgba(0,0,0,0.08);
+	border-radius: 5px;
+	padding: 30px;
+	margin-top:20px;
+	margin-right: 20px;
+}
+.quick-links-items{
+	margin-right: 10px;
+}
+.announcements{
+	width: 300px;
+	height: 500px;
+	background: #FFFFFF;
+	box-shadow: 0 4px 4px 0 rgba(0,0,0,0.08);
+	float: right;
+	margin-top: 30px;
+}
+.quick-links-items{
+	margin-right: 10px;
+}
+
+.content-heading{
+	color: #A4A4A4;
+	letter-spacing: 0;
+}
+.content-heading h1{
+	margin-bottom: 0;
+}
+.content-heading h4{
+	padding-top: 0;
+}
+.quick-links-icons{
+	font-size: 60px;
+	color: #4688F1;
+}
+.quick-links h4{
+	color: #FFFFFF;
+	margin-top: 20px;
+}
+.quick-links h3{
+	margin-top: 40px;
+	margin-left: 20px;
+	color: #A4A4A4;
+}
+.btn-links:hover {
+    opacity: 0.9;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+/* Financial Records */
+.table-records{
+	padding-left: 15px;
+	margin-top: 30px;
+}
+.active-status{
+	margin-right: 3px;
+    font-size: 10px;
+    color: #36B37E;
+}
+.inactive-status{
+	margin-right: 3px;
+    font-size: 10px;
+    color: #DE350A;
+}
+.table-records tr:hover{
+	cursor: pointer;
+}
+.add-button,.print{
+	margin-right: 15px;
+}
+.view-button{
+	width: 100px !important;
+}
+.modal-body label, .heading-label label{
+	font-weight: bold;
+	color: #7A869A;
+	margin-top: 10px;
+}
+
+/* USER RECORD */
+.card{
+	padding: 30px;
+}
+.records{
+	margin-top: 30px;
+}
+.link{
+	color: #000000;
+}
+.modal{
+	box-shadow: 0 12px 36px 16px rgba(0, 0, 0, 0.24) !important;
+}
+
+/* SETTINGS */
+.grey{
+	color: #777777;
+}
+.row-menu{
+	margin-bottom: 20px;
+}
+.margin{
+	margin-bottom: 30px;
+}
+
+/* Student Profile */
+.sm-headings{
+	margin-top: 20px;
+	font-weight: bold;
+}
+.profile-picture {
+	margin-top: 0 !important;
+	font-weight: normal !important;
+}
+.custom-file-input{
+	cursor: pointer;
+}
+.date-padding-reset{
+	padding-left: 0 !important;
+}
+.pagination{
+	justify-content: center;
+}
+/* SECTION LIST */
+.card-shadow{
+	box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+}
+.card{
+	margin-top: 20px;
+}
+
+/* SCHOOL YEAR LIST */
+.btn-long-text{
+	white-space:normal !important;
+    max-width:200px;
+    word-wrap:break-word;
+}
+.text-center{
+	text-align:center;
+}
+.text-right{
+	text-align: right;
+}
+.text-left{
+	text-align: left;
+}
+
+/* USERS LIST ADD */
+.btn-forms{
+	margin: 20px;
+}
+.reset-password-btn{
+	font-weight: bold;
+	color: #007bff !important;
+	margin-left: 10px;
+}
+
+/* CURRICULUM LIST ADD */
+.delete-btn{
+	/*font-size:2em; */
+	margin-top: 40px;
+}
+.warning{
+	color:#DE350A;
+}
+
+/* CURRICULUM LIST */
+.flex-container{
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-end;
+}
+.menu-flex{
+	display: flex; 
+	justify-content: space-between !important;
+}
+.flex-item{
+	align-self: flex-end;
+	
+}
+.title{
+	text-align: center;
+}
+
+/* EMPLOYEE PROFILE */
+
+/* FOOTER */
+footer{
+	width: auto;
+	background-color: #ffffff;
+	height: 50px;
+}
+.footer-parent{
+	display: flex;
+  	flex-flow: row wrap;
+}
+.footer-parent> * {
+	padding: 20px;
+    flex: 1 100%;
+    text-align: center;
+}
+  
+.footer-items{
+	margin: auto;
+}

@@ -1,93 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <title>Admin Dashboard</title>
+    <title>Admin Dashboard</title>
 
-      <!-- globals -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- globals -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-      <!-- css files -->
-      <link href="01-css/bootstrap.css" rel="stylesheet" type="text/css" />
-      <link href="01-css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-      <link href="01-css/normalize.css" rel="stylesheet" type="text/css" />
-      <link href="01-css/styles.css" rel="stylesheet" type="text/css" />
+    <!-- css files -->
+    <link href="01-css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="01-css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="01-css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="01-css/styles.css" rel="stylesheet" type="text/css" />
 
-      <!-- icons -->
-      <link rel="stylesheet" href="04-fonts/simple-line-icons-master/css/simple-line-icons.css">
-      <link rel="stylesheet" href="04-fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- icons -->
+    <link rel="stylesheet" href="04-fonts/simple-line-icons-master/css/simple-line-icons.css">
+    <link rel="stylesheet" href="04-fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 
 
-      <!-- jquery file-->
-      <script src="02-javascript/jquery-3.2.1.min.js"></script>
+    <!-- jquery file-->
+    <script src="02-javascript/jquery-3.2.1.min.js"></script>
   </head>
   <body>
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-light bg-faded bg-nav">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <!--NAVBAR-->
+    <nav class="navbar navbar-light bg-faded navbar-expand-lg">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#"></a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#" style="color: #4688F1;">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="admin-dashboard.html">Home
+                <span class="sr-only">(current)</span>
+              </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="admin-settings.html">Settings</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Reports</a>
+              <a class="nav-link" href="admin-reports.html">Reports</a>
             </li>
           </ul>
         </div>
-        <span class="navbar-text">Steve Harrington <i class="icon-arrow-down"></i> </span> <!-- User's fullname -->
-        <button class="btn-logout" onclick="location.href='index.html'"><span>Logout</span></button>
+        <a class="user black-text" href="#">Steve Harrington
+          <i class="icon-user"></i>
         </a>
-      </nav>
-    </div>
-  <div class="container-fluid bg-content">
-    <div class="content">
-        <div class="content-heading">
-          <h1> Welcome, Steve Harrington</h1> <!--Name of user-->
-          <h4> What do you want to do today? </h4>
+        <a href="index.html" class="btn btn-logout">Logout</a>
+      </div>
+    </nav>
+    <!--NAVBAR-->
+    <!--CONTENT-->
+    <div class="container-fluid bg-dashboard">
+      <div class="content container">
+        <div class="content-heading margin">
+          <div class="titlehead"><h1 class="text-center"> Maryknoll Academy of Cateel</h1></div>
+          <div class="link uppercase text-center"><h4 class="subtitle">Dashboard</h4></div>
+          <div class="subtitle-border"></div>
+        </div>
+        <div class="quick-links">
+              <div class="row">
+                <div class="col quick-links-item">
+                  <button class="btn-links" onclick="location.href='student-registration-list.html'">
+                    <i class="icon-people quick-links-icons"></i>
+                    <h4 class="uppercase"> Students </h4>
+                  </button>
+                </div>
+                <div class="col quick-links-item">
+                  <button class="btn-links" onclick="location.href='employee-list.html'">
+                    <i class="icon-people quick-links-icons"></i>
+                    <h4 class="uppercase"> Employees  </h4>
+                  </button>
+                </div>
+                <div class="col quick-links-item">
+                  <button class="btn-links" onclick="location.href='users-list.html'">
+                    <i class="icon-people quick-links-icons"></i>
+                    <h4 class="uppercase"> System Users  </h4>
+                  </button>
+                </div>
+              </div>
         </div>
         <div class="quick-links">
           <div class="row">
-            <div class="col-md-8">
-              <div class="row">
-                <div class="col-md-6">
-                  <button class="btn-links">
-                    <i class="icon-notebook quick-links-icons"></i>
-                    <h4> View Financial Records </h4>
+                <div class="col quick-links-item">
+                  <button class="btn-links" onclick="location.href='student-registration-list.html'">
+                    <i class="icon-chart quick-links-icons"></i>
+                    <h4 class="uppercase"> Daily Cash Report </h4>
                   </button>
                 </div>
-                <div class="col-md-6">
-                  <button class="btn-links">
-                    <i class="icon-graph quick-links-icons"></i>
-                    <h4> Create Student Account </h4>
+                <div class="col quick-links-item">
+                  <button class="btn-links" onclick="location.href='employee-list.html'">
+                    <i class="icon-chart quick-links-icons"></i>
+                    <h4 class="uppercase"> Daily Enrollees Report  </h4>
                   </button>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <button class="btn-links">
-                    <i class="icon-graph quick-links-icons"></i>
-                    <h4> Create Daily Cash Report </h4>
-                  </button>
-                </div>
-                <div class="col-md-6">
-                  <button class="btn-links">
-                    <i class="icon-people quick-links-icons"></i>
-                    <h4> View Student Ledger </h4>
+                <div class="col quick-links-item">
+                  <button class="btn-links" onclick="location.href='users-list.html'">
+                    <i class="icon-chart quick-links-icons"></i>
+                    <h4 class="uppercase"> Money Something  </h4>
                   </button>
                 </div>
               </div>
-            </div>
-          </div>
         </div>
+        
       </div>
     </div>
+    <!--CONTENT-->
+    <!--FOOTER-->
+    <footer class="footer-parent">
+      <div class="container">
+        <div class="footer-items">
+          <p class="item-1">Maryknoll Academy of Cateel</p>
+        </div>
+      </div>
+    </footer>
+    <!--FOOTER-->
+
+    <!-- Bootstrap CDN in case something glitches -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+      crossorigin="anonymous"></script>
 
     <script src="02-javascript/bootstrap.bundle.js"></script>
     <script src="02-javascript/bootstrap.js"></script>

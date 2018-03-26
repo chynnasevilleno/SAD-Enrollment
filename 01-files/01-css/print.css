@@ -1,0 +1,30 @@
+@media print
+{
+	.no-print, .sort-btn {display:none;}
+    .card , .table-bordered{
+        color: #000;    
+        background-color: #fff;
+        @include box-shadow(none);
+        @include text-shadow(none);
+        border: solid white !important;
+    }
+    .sort-btn{
+    	opacity: 0;
+    }
+    *{
+    	margin: 0 !important;
+    	padding: 0 !important;
+    }
+    table{
+    	margin: 10px;
+    }
+    .seal{
+    	content:url(../03-images/form-headings.png);
+    	width: 500px;
+    	height: auto;
+    }
+}
+
+@media screen
+{
+}

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Student Profile</title>
+
+      <!-- globals -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- css files -->
+      <link href="01-css/bootstrap.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/normalize.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/styles.css" rel="stylesheet" type="text/css" />
+
+      <!-- icons -->
+      <link rel="stylesheet" href="04-fonts/simple-line-icons-master/css/simple-line-icons.css">
+      <link rel="stylesheet" href="04-fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-light bg-faded navbar-expand-lg">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="admin-dashboard.html">Home
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="admin-settings.html">Settings</a>
+              <span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Reports</a>
+            </li>
+          </ul>
+        </div>
+        <a class="user black-text" href="#">Steve Harrington
+          <i class="icon-user"></i>
+        </a>
+        <a href="index.html" class="btn btn-logout">Logout</a>
+      </div>
+    </nav>
+    <!--NAVBAR-->
+    <!-- FORM CONTENT -->
+    <div class="container-fluid bg-content">
+      <div class="content container">
+        <form class="heading-label" id="studentProfile">
+          <div class="row">
+            <div class="col">
+              <h3 class="link">Student Profile</h3>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label>Student ID:</label>
+                <p class="form-control-static">0009</p><!--incremental-->
+              </div>
+              <div class="col-md-4">
+                <label>Student level:</label><br/><!-- unsure with the term pa-->
+                <select class="custom-select btn-block" required>
+                  <option selected>Choose student type...</option>
+                  <option value="1">Grade School</option>
+                  <option value="2">Junior High School</option>
+                  <option value="3">Senior High School</option>
+                  <option value="3">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label>First name:</label>
+                  <input type="text" id="firstName" class="form-control" required>
+              </div>
+              <div class="col-md-4">
+                <label>Middle name:</label>
+                  <input type="text"  id="midName" class="form-control" required>
+              </div>
+              <div class="col-md-4">
+                <label>Last name:</label>
+                  <input type="text"  id="lastName" class="form-control" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Place of Birth:</label>
+                <input type="text"  id="birthplace" class="form-control" required>
+              </div>
+              <div class="col-md-4">
+                <label>Date of Birth:</label><br/>
+                <input class="form-control"  id="dob" type="date" value="2011-08-19" id="example-date-input">
+              </div>
+              <div class="col-md-2">
+                <label>Sex:</label><br/>
+                <select id="gender" class="custom-select btn-block" required>
+                  <option selected>Choose gender...</option>
+                  <option value="1">Female</option>
+                  <option value="2">Male</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>Home Address:</label>
+                <input type="text"   id="homeAddr" class="form-control" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>Postal Address:</label>
+                <input type="text" id="postalAddr"  class="form-control" required>
+              </div>
+            </div>
+            <h5 class="sm-headings">Parental Information </h5>
+            <div class="row">
+              <div class="col-md-4">
+                <label>Father's First Name:</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="col-md-4">
+                <label>Father's Middle Name:</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="col-md-4">
+                <label>Father's Last Name:</label>
+                <input type="text" class="form-control" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label>Father's Occupation:</label>
+                <input type="text" class="form-control" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label>Mother's First Name:</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="col-md-4">
+                <label>Mother's Middle Name:</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="col-md-4">
+                <label>Mother's Last Name:</label>
+                <input type="text" class="form-control" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label>Mother's Occupation:</label>
+                <input type="text" class="form-control" required>
+              </div>
+            </div>
+            <h5 class="sm-headings">Sisters/Brothers enrolled in Maryknoll</h5>
+            <div id="addSibs">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Sibling's Name</label>
+                  <input list="siblings" type="text" class="form-control" required> <!-- List makes it searchable-->
+                  <!--Display all potential siblings(?)-->
+                  <datalist id="siblings">
+                    <option value="Mosby, Ted"></option>
+                    <option value="Stinson, Barney"></option>
+                    <option value="Sherbatsky, Robin"></option>
+                  </datalist>
+                </div>
+                <div class="col-md-4">
+                  <label>Year Graduated</label>
+                    <input type="text" class="form-control" required>
+                    <!-- Autogenerate year graduated of sibling-->
+                </div>
+                <div class="col-md-2 text-center delete-btn">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <button type="button" id="sibs" onclick="add()" class="btn btn-link"><i class="fa fa-plus" aria-hidden="true"></i> Add another sibling</button>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Guardian's Name</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <label>Address</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>School Last Attended:</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="btn-forms" style="display: flex; justify-content: flex-end">
+              <!-- new changes 03/02 -->
+              <button type="button" class="btn btn-link">Cancel</button><!--Go back to records-->
+              <button type="submit">Save</button>
+              <!--<button type="button" id="confirmModal" class="btn btn-primary" data-toggle="modal" data-target=".confirmModal"><i class="fa fa-check-circle" aria-hidden="true"></i> Save Student Profile</button>-->
+              <!--<div class="modal fade confirmModal" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">-->
+              <!--  <div class="modal-dialog" role="document">-->
+              <!--    <div class="modal-content">-->
+              <!--        <div class="modal-header">-->
+              <!--          <h5 class="modal-title">Confirm Submission</h5>-->
+              <!--          <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+              <!--            <span aria-hidden="true">&times;</span>-->
+              <!--          </button>-->
+              <!--        </div>-->
+              <!--        <div class="modal-body">-->
+              <!--          <div class="row">-->
+              <!--              <div class="col-sm-4">-->
+              <!--                <label>First Name:</label>-->
+              <!--                <p class="form-control-static" id="firstName">Karl</p>-->
+              <!--              </div>-->
+              <!--              <div class="col-sm-4">-->
+              <!--                <label>Middle Name:</label>-->
+              <!--                <p class="form-control-static" id="middleName">Heinrich</p>-->
+              <!--              </div>-->
+              <!--              <div class="col-sm-4">-->
+              <!--                <label>Last Name:</label>-->
+              <!--                <p class="form-control-static" id="lastName">Marx</p>-->
+              <!--              </div>-->
+              <!--          </div>-->
+              <!--          <div class="row">-->
+              <!--              <div class="col-sm-8">-->
+              <!--                <label>Place of Birth:</label>-->
+              <!--                <p class="form-control-static" id="pob">Tier, Germany Tier, Germany Tier, Germany Tier, Germany Tier, Germany</p>-->
+              <!--              </div>-->
+              <!--              <div class="col-sm-4">-->
+              <!--                <label>Date of Birth:</label>-->
+              <!--                <p class="form-control-static" id="dob">May 5, 1818</p>-->
+              <!--              </div>-->
+              <!--          </div>-->
+              <!--          <div class="row">-->
+              <!--            <div class="col">-->
+              <!--                <label>Home Address:</label>-->
+              <!--                <p class="form-control-static" id="homeAdd">Tier, Germany Tier, Germany Tier, Germany Tier, Germany Tier, Germany</p>-->
+              <!--            </div>-->
+              <!--          </div>-->
+              <!--          <div class="row">-->
+              <!--              <div class="col">-->
+              <!--                  <label>Postal Address:</label>-->
+              <!--                  <p class="form-control-static" id="homeAdd">Tier, Germany Tier, Germany Tier, Germany Tier, Germany Tier, Germany</p>-->
+              <!--              </div>-->
+              <!--          </div>-->
+              <!--          <div class="row">-->
+              <!--              <div class="col-sm-4">-->
+              <!--                <label>Father's First Name:</label>-->
+              <!--                <p class="form-control-static" id="fFirstName">Iosif</p>-->
+              <!--              </div>-->
+              <!--              <div class="col-sm-4">-->
+              <!--                <label>Father's Middle Name:</label>-->
+              <!--                <p class="form-control-static" id="fMidName">Vissarionovich </p>-->
+              <!--              </div>-->
+              <!--              <div class="col-sm-4">-->
+              <!--                <label>Father's Last Name:</label>-->
+              <!--                <p class="form-control-static" id="fLastName">Dzhugashvili</p>-->
+              <!--              </div>-->
+              <!--          </div>-->
+              <!--          <div class="row">-->
+              <!--              <div class="col-sm-4">-->
+              <!--                <label>Mother's First Name:</label>-->
+              <!--                <p class="form-control-static" id="mFirstName">Hillary</p>-->
+              <!--              </div>-->
+              <!--              <div class="col-sm-4">-->
+              <!--                <label>Mother's Middle Name:</label>-->
+              <!--                <p class="form-control-static" id="mMidName">Diane</p>-->
+              <!--              </div>-->
+              <!--              <div class="col-sm-4">-->
+              <!--                <label>Mother's Last Name:</label>-->
+              <!--                <p class="form-control-static" id="mLastName">Clinton</p>-->
+              <!--              </div>-->
+              <!--          </div>-->
+              <!--          <div class="row">-->
+              <!--              <div class="col-sm-6">-->
+              <!--                <label>Sibling Full Name:</label>-->
+              <!--                <p class="form-control-static" id="sFullName">Putin, Vladimir</p>-->
+              <!--              </div>-->
+              <!--              <div class="col-sm-4">-->
+              <!--                <label>Year Graduated:</label>-->
+              <!--                <p class="form-control-static" id="yrGrad">2018</p>-->
+              <!--              </div>-->
+              <!--          </div>-->
+              <!--          <div class="row">-->
+              <!--              <div class="col-sm-6">-->
+              <!--                <label>Guardian's Full Name:</label>-->
+              <!--                <p class="form-control-static" id="gFullName">Trump, Donald John</p>-->
+              <!--              </div>-->
+              <!--              <div class="col-sm-6">-->
+              <!--                <label>Guardian's Address:</label>-->
+              <!--                 <p class="form-control-static" id="mMidName">Pyongyang, North Korea</p>-->
+              <!--              </div>-->
+              <!--          </div>-->
+              <!--          <div class="row">-->
+              <!--            <div class="col">-->
+              <!--                <label>School Last Attended:</label>-->
+              <!--                <p class="form-control-static" id="mFirstName">Florida High School</p>-->
+              <!--            </div>-->
+              <!--          </div>-->
+              <!--        </div>-->
+              <!--        <div class="modal-footer">-->
+              <!--          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+              <!--          <button type="submit"  class="btn btn-primary"> Submit Student Profile</button>-->
+              <!--        </div>-->
+              <!--    </div>-->
+              <!--  </div>-->
+              <!--</div>-->
+            </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bootstrap CDN in case something glitches -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+    <script src="02-javascript/bootstrap.bundle.js"></script>
+    <script src="02-javascript/bootstrap.js"></script>
+    <script src="02-javascript/bootstrap.min.js"></script>
+    <script src="02-javascript/validation/jquery.validate.min.js"></script>
+    <script src="02-javascript/validation/student-registration-validation.js"></script>
+  
+    
+    <!--display modal data from input-->
+    <script>
+      $(function(){
+          $('#confirmModal').on('click', function(){
+            
+          });
+      });
+    </script>
+
+    <script>
+      var count=1;
+      var add = function(){
+        if(count >= 100) return;
+
+        $('#addSibs').append('<div class="row"><div class="col-md-6"> <label>Sibling\'s Name</label><input list="siblings" type="text" class="form-control" required> <!-- List makes it searchable--><datalist id="siblings"><option value="Mosby, Ted"></option><option value="Stinson, Barney"></option><option value="Sherbatsky, Robin"></option></datalist></div><div class="col-md-4"><label>Year Graduated</label><input type="text" class="form-control" required></div><div class="col-md-2 text-center delete-btn"><button type="button" class="btn btn-danger" onclick="deleteRow(this)">Remove</button></div></div></div>')
+
+        count++;
+
+        if(count >= 100) { $("#sibs").remove(); }
+      };
+    </script>
+
+    <script>
+      function deleteRow(obj){
+        $(obj).closest('.row').remove();
+      }
+    </script>
+
+    <!-- Bootstrap CDN in case something glitches -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+    <script src="02-javascript/bootstrap.bundle.js"></script>
+    <script src="02-javascript/bootstrap.js"></script>
+    <script src="02-javascript/bootstrap.min.js"></script>
+
+    <!-- JQUERY -->
+    <script src="02-javascript/jquery-3.2.1.min.js"></script>
+
+
+  </body>
+</html>

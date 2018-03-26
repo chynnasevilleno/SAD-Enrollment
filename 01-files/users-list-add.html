@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>System Users</title>
+
+      <!-- globals -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- css files -->
+      <link href="01-css/bootstrap.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/normalize.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/styles.css" rel="stylesheet" type="text/css" />
+
+      <!-- icons -->
+      <link rel="stylesheet" href="04-fonts/simple-line-icons-master/css/simple-line-icons.css">
+      <link rel="stylesheet" href="04-fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-light bg-faded navbar-expand-lg">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="admin-dashboard.html">Home
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="admin-settings.html">Settings</a>
+              <span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Reports</a>
+            </li>
+          </ul>
+        </div>
+        <a class="user black-text" href="#">Steve Harrington
+          <i class="icon-user"></i>
+        </a>
+        <a href="index.html" class="btn btn-logout">Logout</a>
+      </div>
+    </nav>
+    <!-- NAVBAR -->
+    <!-- FORM CONTENT -->
+    <div class="container-fluid bg-content">
+      <div class="content container">
+        <form class="heading-label">
+          <div class="row">
+            <div class="col">
+              <h3 class="link">User Information</h3>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label>User ID:</label>
+                <p class="form-control-static">0009</p>
+                <!--incremental-->
+              </div>
+              <div class="col-md-4">
+                <label class="heading-label">Date Added:</label>
+                <p class="form-control-static">01/07/18</p>
+                <!--incremental-->
+              </div>
+            </div>
+            <div class="row">
+              <!-- All values of employees -->
+              <div class="col-md-6">
+                <label>Employee Name:</label>
+                  <input list="employees" type="text" class="form-control" required> <!-- List makes it searchable-->
+                  <datalist id="employees">
+                    <option value="Mosby, Ted"></option>
+                    <option value="Stinson, Barney"></option>
+                    <option value="Sherbatsky, Robin"></option>
+                  </datalist>
+              </div><!-- All values of employees -->
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>User Role:</label>
+                <input list="roles" type="text" class="form-control" required> <!-- List makes it searchable-->
+                  <datalist id="employees">
+                    <option value="Administrator"></option>
+                    <option value="Head Registrar"></option>
+                    <option value="Academic Head"></option>
+                    <option value="Cashier"></option>
+                  </datalist>
+              </div>
+              <div class="col-md-6">
+                <label>Department:</label>
+                <input list="departments" type="text" class="form-control" required> <!-- List makes it searchable-->
+                  <datalist id="employees">
+                    <option value="Grade School Department"></option>
+                    <option value="Junior High School Department"></option>
+                    <option value="Senior High School Department"></option><!-- For specific department chairs -->
+                    <option value="Registrar Office"></option>
+                    <option value="Cashier Office"></option>
+                    <option value="Administrator"></option>
+                  </datalist>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Username: <a data-toggle="tooltip" data-placement="right" title="Username is composed of your first name initial, middle initials, and your surname"><i class="fa fa-question-circle" aria-hidden="true"></i></a></label>
+                <p class="form-control-static">tmosby</p><!--autogenerated-->
+              </div>
+              <div class="col-md-6">
+                <label>Password: <a data-toggle="tooltip" data-placement="right" title="Password is encrypted"><i class="fa fa-question-circle" aria-hidden="true"></i></a></label></label><!-- should be encrypted -->
+                <p class="form-control-static">
+                **************************************<a class="reset-password-btn"> Reset</a></p> 
+              </div>
+            </div>
+            <div class="btn-forms" style="display: flex; justify-content: flex-end">
+              <button type="button" class="btn btn-link">Cancel</button><!--Go back to records-->
+              <a href="#" class="btn btn-primary "><i class="fa fa-check-circle" aria-hidden="true"></i> Save System User Details</a>
+            </div>
+          <!--<button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#confirmModal"></button>-->
+          </form>
+        </div>
+      </div>
+    <!-- Bootstrap CDN in case something glitches -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+    <script src="02-javascript/bootstrap.bundle.js"></script>
+    <script src="02-javascript/bootstrap.js"></script>
+    <script src="02-javascript/bootstrap.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+    });
+    </script>
+  </body>
+</html>

@@ -17,19 +17,21 @@
 	    <link rel="stylesheet" href="04-fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 	</head>
 	<body>
-		<div class="container">
+		<div class="index-container">
 			<img src="03-images/logo.jpg" width="90px" height="90px"/>
-			<h2 class="title"> Maryknoll Academy <br/> of Cateel <br/> Enrollment System </h2>
+			<h2 class="title text-left">Maryknoll Academy <br/> of Cateel <br/> Enrollment System </h2>
 		</div>
-		<div class="container">
+		<div class="container form-container">
 			<div class="form-input">
-				<form class="form form-login">
-					<h4 class = "placeholder"> Username: </h4>
-					<input type="text" class="form-control input-login">
-					<h4 class = "placeholder"> Password: </h4>
-					<input type="password" class="form-control input-login">
+				<form class="form">
+					<div class="form-login">
+						<h4 class = "placeholder"> Username: </h4>
+						<input type="text" class="form-control input-login">
+						<h4 class = "placeholder"> Password: </h4>
+						<input type="password" class="form-control input-login">
+					</div>
+					<a href="admin-dashboard.html" class="btn-login"><h3>log in</h3></a>
 				</form>
-				<button type="submit" class="btn-login" onclick="location.href='admin-dashboard.html'"><h3>log in</h3></button>
 			</div>
 		</div>
 		<h5 id="forgot-user"><a href="#"> Forgot username?</a></h5>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Curriculum Details</title>
+
+      <!-- globals -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- css files -->
+      <link href="01-css/bootstrap.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/normalize.css" rel="stylesheet" type="text/css" />
+      <link href="01-css/styles.css" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="01-css/print.css" type="text/css" media="print">
+
+      <!-- icons -->
+      <link rel="stylesheet" href="04-fonts/simple-line-icons-master/css/simple-line-icons.css">
+      <link rel="stylesheet" href="04-fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <!--NAVBAR-->
+    <div class="no-print">
+      <nav class="navbar navbar-light bg-faded navbar-expand-lg">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="admin-dashboard.html">Home
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="admin-settings.html">Settings</a>
+                <span class="sr-only">(current)</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Reports</a>
+              </li>
+            </ul>
+          </div>
+          <a class="user black-text" href="#">Steve Harrington
+            <i class="icon-user"></i>
+          </a>
+          <a href="index.html" class="btn btn-logout">Logout</a>
+        </div>
+      </nav>
+    </div>
+    <!--NAVBAR-->
+    <!-- CONTENT -->
+    <div class="container-fluid bg-content">
+      <div class="content container">
+        <a href="curriculum-list.html">
+          <h4 class="no-print">
+            <i class="fa fa-angle-left" aria-hidden="true"></i> Back to records list</h4>
+        </a>
+        <div class="card">
+          <div class="card-body">
+            <div class="seal"></div>
+            <div class="row records">
+              <div class="col-md-6">
+                <h2>Curriculum Details</h2>
+              </div>
+              <div class="col-md-6">
+                <div class="flex-container no-print">
+                  <div class="align-right-item">
+                    <a href="javascript:window.print()" class="card-link  print flex-item btn btn-outline-primary">
+                      <i class="fa fa-print" aria-hidden="true"></i> Print Records</a>
+                    <a href="curriculum-subjects-list-add.html" class="add-button btn btn-primary ">
+                      <i class="fa fa-plus" aria-hidden="true"></i> Add New Subjects</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row table-records table-responsive">
+              <table class="table table-bordered bg-nav table-hover">
+                <thead class="thead-light">
+                  <tr>
+                    <!-- Refer to database for headings -->
+                    <th scope="col">Grade Level</th>
+                    <th scope="col">Subject Name</th>
+                    <th scope="col">Credit Units</th>
+                    <th scope="col" class="no-print">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Grade 6</td>
+                    <td>Mathematics VI</td>
+                    <td>3/3</td>
+                    <td class="text-center">
+                      <a href="curriculum-subjects-list-add.html" class="btn btn-secondary btn-sm view-button no-print">Edit</a>
+                      <button type="button" onclick="deleteRow(this)" class="btn btn-sm btn-danger view-button">Delete</button>
+                    </td>
+                    <!-- For its edit function,redirect pa rin sa add page nya but remove the "add additional subjects below it"-->
+                  </tr>
+                  <tr>
+                    <td>Grade 6</td>
+                    <td>Computer VI</td>
+                    <td>3/5</td>
+                    <td class="text-center">
+                      <a href="#" class="btn btn-secondary btn-sm view-button no-print">Edit</a>
+                      <button type="button" onclick="deleteRow(this)" class="btn btn-sm btn-danger view-button">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- CONTENT -->
+
+    <!-- Bootstrap CDN in case something glitches -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+    <script>
+      var count=1;
+      var add = function(){
+        if(count >= 15) return;
+        $('#addSubjects').append('<div class="col-md-4"> <label>Subject ID:</label><p class="form-control-static">0001</p></div><div class="col-md-6"><label>Subject Name:</label><input type="text" class="form-control" required></div>') // Increment SubjectID
+        count++;
+      };
+    </script>
+    
+    <script>
+      function deleteRow(obj){
+        $(obj).closest('tr').remove();
+      }
+    </script>
+    
+
+    <script src="02-javascript/bootstrap.bundle.js"></script>
+    <script src="02-javascript/bootstrap.js"></script>
+    <script src="02-javascript/bootstrap.min.js"></script>
+  </body>
+  </html>
